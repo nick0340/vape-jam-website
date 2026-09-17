@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vape Jam — Karachi's Premier Vape Store | Pods, Mods & E-Liquids</title>
+<meta name="description" content="Vape Jam Karachi — 100% authentic vape devices, pod systems & premium e-liquids. 3 outlets (Bahadurabad, DHA, Gulshan) + same-day city-wide delivery." />
+<link rel="icon" type="image/png" href="logo.png" />
+
+<!-- ============ FONTS ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- ============ TAILWIND v4 ============ -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- ============ LUCIDE ICONS ============ -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<!-- ============ BRAND DESIGN TOKENS (Vape Jam Theme) ============ -->
+<style type="text/tailwindcss">
+@theme {
+  --color-page:   #F8F9FA;   /* clean modern off-white background */
+  --color-card:   #FFFFFF;   /* pure white product & card panels */
+  --color-surface:#F1F5F9;   /* light gray surface */
+  --color-ink:    #0F172A;   /* deep rich charcoal text */
+  --color-coal:   #1E293B;   /* dark slate accent */
+  --color-ember:  #F58220;   /* VJ vibrant logo amber-orange */
+  --color-rust:   #D9531E;   /* VJ logo burnt terracotta */
+  --color-line:   #E2E8F0;   /* clean hairline borders */
+  --color-mute:   #64748B;   /* refined secondary slate text */
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+}
+</style>
+
+<!-- ============ CUSTOM FX LAYER ============ -->
+<style>
+  ::selection{ background:#F58220; color:#FFFFFF; }
+  html{ scrollbar-color:#CBD5E1 #F8F9FA; }
+  body::-webkit-scrollbar{ width:9px; } body::-webkit-scrollbar-track{ background:#F8F9FA; }
+  body::-webkit-scrollbar-thumb{ background:#CBD5E1; border-radius:99px; border:2px solid #F8F9FA; }
+  body::-webkit-scrollbar-thumb:hover{ background:#F58220; }
+
+  .wrap{ max-width:80rem; margin-inline:auto; padding-inline:1rem; }
+  @media(min-width:640px){ .wrap{ padding-inline:1.5rem; } }
+  @media(min-width:1024px){ .wrap{ padding-inline:2rem; } }
+
+  /* Brand wordmark gradient */
+  .grad-ember{ background:linear-gradient(96deg,#F58220 5%,#D9531E 95%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .btn-ember{ background:linear-gradient(96deg,#F58220 5%,#D9531E 95%); color:#FFFFFF; }
+
+  /* Hero subtle blueprint grid */
+  .gridbg{
+    background-image:linear-gradient(rgba(15,23,42,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.035) 1px,transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:radial-gradient(ellipse 85% 70% at 50% 30%,#000 35%,transparent 80%);
+            mask-image:radial-gradient(ellipse 85% 70% at 50% 30%,#000 35%,transparent 80%);
+  }
+
+  /* Finder pills — Light modern state */
+  .pill{ display:inline-flex; align-items:center; gap:.45rem; border:1px solid #E2E8F0; background:#FFFFFF; color:#475569;
+    border-radius:999px; padding:.45rem 1rem; font-size:.82rem; font-weight:500; line-height:1; cursor:pointer; white-space:nowrap;
+    box-shadow:0 1px 2px rgba(0,0,0,0.04);
+    transition:all .22s cubic-bezier(.22,1,.36,1); }
+  .pill:hover{ border-color:rgba(245,130,32,.6); color:#F58220; transform:translateY(-1px); box-shadow:0 4px 12px rgba(245,130,32,0.12); }
+  .pill.active{ border-color:#F58220; color:#D9531E; background:#FFF7ED; font-weight:600;
+    box-shadow:0 0 0 1px #F58220 inset, 0 4px 16px -2px rgba(245,130,32,.25); }
+  .pill .pill-ic{ width:.95rem; height:.95rem; }
+
+  /* Tab buttons */
+  .tabbtn{ display:inline-flex; align-items:center; gap:.5rem; padding:.65rem 1.25rem; border-radius:999px; font-size:.84rem; font-weight:600;
+    color:#64748B; border:1px solid transparent; cursor:pointer; transition:all .3s ease; }
+  .tabbtn.active{ color:#FFFFFF; background:linear-gradient(96deg,#F58220,#D9531E); box-shadow:0 8px 24px -6px rgba(245,130,32,.5); }
+
+  /* Nav link underline sweep */
+  .navlink{ position:relative; color:#334155; font-size:.86rem; font-weight:500; transition:color .25s; padding-block:.25rem; }
+  .navlink::after{ content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0; background:linear-gradient(90deg,#F58220,#D9531E); transition:width .3s cubic-bezier(.22,1,.36,1); border-radius:2px; }
+  .navlink:hover{ color:#F58220; } .navlink:hover::after{ width:100%; }
+
+  /* Scroll reveal */
+  .rv{ opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  .rv.in{ opacity:1; transform:none; }
+
+  /* Product card entrance */
+  @keyframes cardIn{ from{ opacity:0; transform:translateY(16px) scale(.985); filter:blur(3px);} to{ opacity:1; transform:none; filter:blur(0);} }
+  .prod{ animation:cardIn .45s cubic-bezier(.22,1,.36,1) both; }
+
+  /* Brand marquee */
+  @keyframes mq{ to{ transform:translateX(-50%);} }
+  .mq-track{ display:flex; width:max-content; animation:mq 30s linear infinite; }
+  .mq-set{ padding-right:4.5rem; }
+  .mq:hover .mq-track{ animation-play-state:paused; }
+
+  /* Pulsing dots */
+  @keyframes softPing{ 0%{ transform:scale(1); opacity:.9;} 80%,100%{ transform:scale(2.4); opacity:0;} }
+  .ping-ring{ animation:softPing 1.8s cubic-bezier(0,0,.2,1) infinite; }
+  @keyframes waGlow{ 0%,100%{ box-shadow:0 0 0 0 rgba(37,211,102,.45), 0 10px 30px -4px rgba(37,211,102,.5);} 50%{ box-shadow:0 0 0 10px rgba(37,211,102,0), 0 10px 30px -4px rgba(37,211,102,.7);} }
+  .wa-glow{ animation:waGlow 2.4s ease-in-out infinite; }
+
+  /* Cart badge bump */
+  @keyframes bump{ 0%{transform:scale(1)} 40%{transform:scale(1.35)} 100%{transform:scale(1)} }
+  .bump{ animation:bump .35s cubic-bezier(.22,1,.36,1); }
+
+  /* Cart drawer */
+  #cartDrawer{ transform:translateX(105%); transition:transform .45s cubic-bezier(.22,1,.36,1); }
+  #cartDrawer.open{ transform:translateX(0); }
+  #cartOverlay{ opacity:0; pointer-events:none; transition:opacity .35s ease; }
+  #cartOverlay.open{ opacity:1; pointer-events:auto; }
+
+  .no-scrollbar::-webkit-scrollbar{ display:none; } .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
+
+  @keyframes toastIn{ from{ opacity:0; transform:translateY(14px) scale(.97);} to{ opacity:1; transform:none;} }
+  .toast{ animation:toastIn .35s cubic-bezier(.22,1,.36,1) both; }
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+
+<body class="bg-page text-ink font-body antialiased overflow-x-clip min-h-screen">
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/age-gate.liquid
+============================================================ -->
+<div id="ageGate" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 backdrop-blur-md px-4 transition-opacity duration-500">
+  <div class="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-[0_30px_90px_-20px_rgba(0,0,0,.4)] relative overflow-hidden">
+    <div class="absolute -top-24 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-ember/15 blur-3xl" aria-hidden="true"></div>
+    <div class="relative">
+      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-black p-2 shadow-lg">
+        <img src="logo.png" alt="Vape Jam Logo" class="h-full w-full object-contain" />
+      </div>
+      <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-mute">Age Verification Required</p>
+      <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink">Are you 21 or older?</h2>
+      <p class="mt-3 text-sm leading-relaxed text-mute">Vape Jam Karachi sells nicotine products strictly to adults 21+. Please confirm your age to enter.</p>
+      <div class="mt-7 flex flex-col gap-3">
+        <button id="ageEnter" class="w-full rounded-xl bg-gradient-to-r from-ember to-rust py-3.5 font-display font-semibold text-white transition-all hover:brightness-105 active:scale-95 shadow-[0_10px_30px_-8px_rgba(245,130,32,.6)]">I am 21+ — Enter Store</button>
+        <a href="https://www.google.com" class="w-full rounded-xl border border-line py-3 text-sm text-mute transition-colors hover:border-slate-400 hover:text-ink">I'm under 21 — Exit</a>
+      </div>
+      <p class="mt-5 font-mono text-[10px] leading-relaxed text-mute/80">WARNING: This product contains nicotine.<br/>Nicotine is an addictive chemical.</p>
+    </div>
+  </div>
+</div>
+<script>
+  /* Age gate — skip if already verified this session */
+  (function(){
+    var gate = document.getElementById('ageGate');
+    if(sessionStorage.getItem('vj21')==='1'){ gate.style.display='none'; }
+    else { document.body.classList.add('overflow-hidden'); }
+  })();
+</script>
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/announcement-bar.liquid
+============================================================ -->
+<div class="relative z-[45] bg-gradient-to-r from-ember via-[#EA7215] to-rust text-white shadow-sm">
+  <div class="wrap flex h-9 items-center justify-between gap-6 font-mono text-[10.5px] font-semibold uppercase tracking-[0.14em]">
+    <div class="flex items-center gap-6 overflow-x-auto whitespace-nowrap no-scrollbar">
+      <span class="flex items-center gap-2"><i data-lucide="zap" class="h-3.5 w-3.5 text-amber-200"></i> Same-Day Express Delivery Across Karachi</span>
+      <span class="hidden md:inline opacity-60">◆</span>
+      <span class="hidden md:inline">3 Outlets: Bahadurabad · DHA · Gulshan</span>
+      <span class="hidden lg:inline opacity-60">◆</span>
+      <span class="hidden lg:inline">100% Authentic Original Stock</span>
+    </div>
+    <a href="https://wa.me/923362396603?text=Hi%20Vape%20Jam!%20I%20want%20to%20place%20a%20quick%20order." target="_blank" rel="noopener" class="flex shrink-0 items-center gap-2 rounded-full bg-black/25 px-3 py-1 text-white transition-colors hover:bg-black/40">
+      <span class="relative flex h-2 w-2">
+        <span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-green-400"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+      </span>
+      WhatsApp Order
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/header.liquid
+============================================================ -->
+<header id="siteHeader" class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-all duration-300">
+  <div class="wrap flex h-[74px] items-center justify-between gap-4">
+
+    <!-- Brand with Official Logo -->
+    <a href="#top" class="flex items-center gap-3 group">
+      <div class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-black p-1.5 shadow-sm transition-transform group-hover:scale-105">
+        <img src="logo.png" alt="Vape Jam Logo" class="h-full w-full object-contain" />
+      </div>
+      <span class="leading-none">
+        <span class="font-display text-2xl font-extrabold tracking-tight text-ink">VAPE<span class="text-ember">JAM</span></span>
+        <span class="mt-0.5 block font-mono text-[8.5px] uppercase tracking-[0.38em] text-mute font-semibold">Karachi · Pakistan</span>
+      </span>
+    </a>
+
+    <!-- Center nav -->
+    <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
+      <a href="#shop" class="navlink" data-goto-filter="d:pod">Pod Systems</a>
+      <a href="#shop" class="navlink" data-goto-filter="l:all">E-Liquids &amp; Salt Nic</a>
+      <a href="#shop" class="navlink" data-goto-filter="d:disposable">Disposables</a>
+      <a href="#shop" class="navlink" data-goto-filter="d:cart">Tanks &amp; Coils</a>
+      <a href="#outlets" class="navlink">Our Outlets</a>
+      <a href="#deals" class="navlink text-ember font-semibold hover:text-rust">Deals</a>
+    </nav>
+
+    <!-- Right actions -->
+    <div class="flex items-center gap-3">
+      <!-- Quick search -->
+      <label class="relative hidden md:block">
+        <i data-lucide="search" class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-mute"></i>
+        <input id="searchInput" type="search" placeholder="Search devices, juices..." autocomplete="off"
+          class="search-input w-44 rounded-full border border-line bg-slate-50 py-2 pl-10 pr-4 text-sm text-ink placeholder-slate-400 outline-none transition-all duration-300 focus:border-ember focus:bg-white focus:w-64 focus:shadow-[0_0_20px_-6px_rgba(245,130,32,.35)]" />
+      </label>
+      <!-- Wishlist -->
+      <button id="wishBtn" class="relative grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-slate-600 shadow-sm transition-all hover:border-ember hover:text-ember" aria-label="Wishlist">
+        <i data-lucide="heart" class="h-4.5 w-4.5"></i>
+        <span id="wishCount" class="absolute -right-1 -top-1 hidden h-4.5 min-w-4.5 place-items-center rounded-full bg-ember px-1 font-mono text-[10px] font-bold text-white shadow-sm">0</span>
+      </button>
+      <!-- Cart trigger -->
+      <button id="cartBtn" class="relative flex h-10 items-center gap-2 rounded-full border border-line bg-white px-4 text-sm font-semibold text-slate-800 shadow-sm transition-all hover:border-ember hover:shadow-[0_0_20px_-6px_rgba(245,130,32,.3)]" aria-label="Open cart">
+        <i data-lucide="shopping-bag" class="h-4.5 w-4.5 text-ember"></i>
+        <span class="hidden sm:inline">Cart</span>
+        <span id="cartCount" class="grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-r from-ember to-rust px-1.5 font-mono text-[10px] font-bold text-white">0</span>
+      </button>
+      <!-- Mobile menu -->
+      <button id="menuBtn" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-slate-700 shadow-sm lg:hidden" aria-label="Menu">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobileMenu" class="hidden border-t border-line bg-white/98 backdrop-blur-xl shadow-xl lg:hidden">
+    <div class="wrap flex flex-col gap-1 py-4">
+      <label class="relative mb-3 md:hidden">
+        <i data-lucide="search" class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-mute"></i>
+        <input id="searchInputM" type="search" placeholder="Search devices, juices..." autocomplete="off"
+          class="w-full rounded-full border border-line bg-slate-50 py-2.5 pl-10 pr-4 text-sm outline-none focus:border-ember" />
+      </label>
+      <a href="#shop" data-goto-filter="d:pod" class="mnav rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-ember">Pod Systems</a>
+      <a href="#shop" data-goto-filter="l:all" class="mnav rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-ember">E-Liquids &amp; Salt Nic</a>
+      <a href="#shop" data-goto-filter="d:disposable" class="mnav rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-ember">Disposables</a>
+      <a href="#shop" data-goto-filter="d:cart" class="mnav rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-ember">Tanks &amp; Coils</a>
+      <a href="#outlets" class="mnav rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-orange-50 hover:text-ember">Our Outlets</a>
+      <a href="#deals" class="mnav rounded-xl px-4 py-3 text-sm font-medium text-ember hover:bg-orange-50">Deals &amp; Authenticity</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/hero.liquid
+============================================================ -->
+<section class="relative overflow-hidden pb-28 pt-12 md:pb-36 md:pt-20 bg-gradient-to-b from-orange-50/40 via-white to-page">
+  <!-- Ambient layers -->
+  <canvas id="heroCanvas" class="absolute inset-0 h-full w-full" aria-hidden="true"></canvas>
+  <div class="gridbg absolute inset-0" aria-hidden="true"></div>
+  <div class="absolute -top-32 left-1/2 h-[380px] w-[650px] -translate-x-1/2 rounded-full bg-ember/10 blur-[100px]" aria-hidden="true"></div>
+  
+  <!-- Giant background watermark -->
+  <div class="pointer-events-none absolute -right-10 top-6 select-none font-display text-[26rem] font-extrabold leading-none text-black/[0.02] hidden xl:block" aria-hidden="true">VJ</div>
+
+  <div class="wrap relative">
+    <div class="mx-auto max-w-4xl text-center">
+      <!-- Location badge -->
+      <div class="rv mx-auto inline-flex items-center gap-2.5 rounded-full border border-orange-200/80 bg-white/90 py-1.5 pl-2.5 pr-4 shadow-sm backdrop-blur">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-ember"></span>
+          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-ember"></span>
+        </span>
+        <span class="font-mono text-[11px] uppercase tracking-[0.2em] font-semibold text-slate-700">Serving Karachi — Bahadurabad · DHA · Gulshan</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="rv mt-7 font-display text-[2.5rem] font-bold leading-[1.08] tracking-tight text-ink sm:text-6xl lg:text-[4.3rem]" style="transition-delay:.08s">
+        Karachi's Premier Destination for <span class="grad-ember">Authentic Vapes</span> &amp; E-Liquids.
+      </h1>
+
+      <p class="rv mx-auto mt-6 max-w-2xl text-base leading-relaxed text-mute md:text-lg" style="transition-delay:.16s">
+        Curated collection of top international hardware brands and premium nicotine salts, backed by expert advice across 3 Karachi outlets.
+      </p>
+
+      <!-- Dual CTA -->
+      <div class="rv mt-9 flex flex-col items-center justify-center gap-3.5 sm:flex-row" style="transition-delay:.24s">
+        <a href="#shop" class="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-ember to-rust px-8 py-4 font-display text-base font-semibold text-white shadow-[0_10px_35px_-8px_rgba(245,130,32,.55)] transition-all duration-300 hover:shadow-[0_14px_45px_-6px_rgba(245,130,32,.75)] hover:brightness-105 active:scale-95 sm:w-auto">
+          <i data-lucide="flame" class="h-4.5 w-4.5 transition-transform group-hover:scale-110"></i>
+          Shop Best Sellers
+        </a>
+        <a href="#outlets" class="group inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-slate-300 bg-white px-8 py-4 font-display text-base font-semibold text-slate-800 shadow-sm transition-all duration-300 hover:border-ember hover:text-ember hover:shadow-[0_8px_30px_-10px_rgba(245,130,32,.25)] active:scale-95 sm:w-auto">
+          <i data-lucide="map-pin" class="h-4.5 w-4.5 text-ember"></i>
+          Find An Outlet Near You
+        </a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="rv mx-auto mt-14 grid max-w-3xl grid-cols-1 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white/95 shadow-md backdrop-blur sm:grid-cols-3 sm:divide-x sm:divide-y-0" style="transition-delay:.34s">
+        <div class="flex items-center gap-3.5 p-4.5 text-left">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="truck" class="h-5 w-5"></i></span>
+          <span><span class="block text-[13px] font-bold text-ink">Same-Day Delivery</span><span class="block font-mono text-[10px] uppercase tracking-wider text-mute">Karachi wide before 8 PM</span></span>
+        </div>
+        <div class="flex items-center gap-3.5 p-4.5 text-left">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="banknote" class="h-5 w-5"></i></span>
+          <span><span class="block text-[13px] font-bold text-ink">Cash on Delivery</span><span class="block font-mono text-[10px] uppercase tracking-wider text-mute">Pay at your doorstep</span></span>
+        </div>
+        <div class="flex items-center gap-3.5 p-4.5 text-left">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="shield-check" class="h-5 w-5"></i></span>
+          <span><span class="block text-[13px] font-bold text-ink">100% Original Batch</span><span class="block font-mono text-[10px] uppercase tracking-wider text-mute">Scratch-code verified</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/quick-finder.liquid  (+ featured grid)
+============================================================ -->
+<section id="shop" class="relative scroll-mt-28 pb-24">
+  <div class="wrap">
+
+    <!-- ===== QUICK VAPE & E-LIQUID FINDER (Light Interactive Widget) ===== -->
+    <div class="rv relative z-20 -mt-20 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_25px_60px_-20px_rgba(0,0,0,.09)] md:-mt-24 md:p-8">
+      <div class="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+        <div class="flex items-center gap-3.5">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-ember to-rust text-white shadow-md"><i data-lucide="sliders-horizontal" class="h-6 w-6"></i></span>
+          <div>
+            <h2 class="font-display text-xl font-bold tracking-tight text-ink md:text-2xl">Quick Vape &amp; E-Liquid Finder</h2>
+            <p class="font-mono text-[10.5px] uppercase tracking-[0.2em] text-mute font-semibold">Tap a filter — the grid reacts live</p>
+          </div>
+        </div>
+        <!-- Tabs -->
+        <div class="inline-flex self-start rounded-full border border-slate-200 bg-slate-100 p-1.5 md:self-auto" role="tablist" aria-label="Finder mode">
+          <button id="tabDevices" class="tabbtn active" role="tab" aria-selected="true"><i data-lucide="cpu" class="h-4 w-4"></i>Find Devices &amp; Pods</button>
+          <button id="tabLiquids" class="tabbtn" role="tab" aria-selected="false"><i data-lucide="droplets" class="h-4 w-4"></i>E-Liquid &amp; Salt Nic</button>
+        </div>
+      </div>
+
+      <!-- TAB 1: Devices -->
+      <div id="panelDevices" role="tabpanel">
+        <div class="space-y-5">
+          <div>
+            <p class="mb-2.5 font-mono text-[10.5px] uppercase tracking-[0.24em] font-semibold text-mute">Brand</p>
+            <div class="flex flex-wrap gap-2" id="devBrandPills">
+              <button class="pill active" data-scope="d" data-key="brand" data-value="all">All</button>
+              <button class="pill" data-scope="d" data-key="brand" data-value="vaporesso">Vaporesso</button>
+              <button class="pill" data-scope="d" data-key="brand" data-value="uwell">Uwell Caliburn</button>
+              <button class="pill" data-scope="d" data-key="brand" data-value="voopoo">Voopoo Drag</button>
+              <button class="pill" data-scope="d" data-key="brand" data-value="geekvape">Geekvape</button>
+              <button class="pill" data-scope="d" data-key="brand" data-value="oxva">OXVA</button>
+            </div>
+          </div>
+          <div>
+            <p class="mb-2.5 font-mono text-[10.5px] uppercase tracking-[0.24em] font-semibold text-mute">Device Type</p>
+            <div class="flex flex-wrap gap-2" id="devTypePills">
+              <button class="pill active" data-scope="d" data-key="type" data-value="all">All</button>
+              <button class="pill" data-scope="d" data-key="type" data-value="pod">Pod Systems</button>
+              <button class="pill" data-scope="d" data-key="type" data-value="disposable">Disposables</button>
+              <button class="pill" data-scope="d" data-key="type" data-value="boxmod">Box Mods</button>
+              <button class="pill" data-scope="d" data-key="type" data-value="cart">Replacement Pods</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: E-liquids -->
+      <div id="panelLiquids" role="tabpanel" class="hidden">
+        <div class="space-y-5">
+          <div>
+            <p class="mb-2.5 font-mono text-[10.5px] uppercase tracking-[0.24em] font-semibold text-mute">Brand</p>
+            <div class="flex flex-wrap gap-2" id="liqBrandPills">
+              <button class="pill active" data-scope="l" data-key="brand" data-value="all">All</button>
+              <button class="pill" data-scope="l" data-key="brand" data-value="vgod">VGOD</button>
+              <button class="pill" data-scope="l" data-key="brand" data-value="skwezed">Skwezed</button>
+              <button class="pill" data-scope="l" data-key="brand" data-value="ruthless">Ruthless</button>
+              <button class="pill" data-scope="l" data-key="brand" data-value="grand">Grand E-Liquids</button>
+              <button class="pill" data-scope="l" data-key="brand" data-value="nasty">Nasty Juice</button>
+              <button class="pill" data-scope="l" data-key="brand" data-value="blvk">BLVK</button>
+            </div>
+          </div>
+          <div class="grid gap-5 lg:grid-cols-2">
+            <div>
+              <p class="mb-2.5 font-mono text-[10.5px] uppercase tracking-[0.24em] font-semibold text-mute">Bottle Size</p>
+              <div class="flex flex-wrap gap-2" id="liqSizePills">
+                <button class="pill active" data-scope="l" data-key="size" data-value="all">All Sizes</button>
+                <button class="pill" data-scope="l" data-key="size" data-value="10ml">10ml</button>
+                <button class="pill" data-scope="l" data-key="size" data-value="30ml">30ml</button>
+                <button class="pill" data-scope="l" data-key="size" data-value="60ml">60ml</button>
+                <button class="pill" data-scope="l" data-key="size" data-value="100ml">100ml</button>
+              </div>
+            </div>
+            <div>
+              <p class="mb-2.5 font-mono text-[10.5px] uppercase tracking-[0.24em] font-semibold text-mute">Flavor Profile</p>
+              <div class="flex flex-wrap gap-2" id="liqFlavorPills">
+                <button class="pill active" data-scope="l" data-key="flavor" data-value="all">All Flavors</button>
+                <button class="pill" data-scope="l" data-key="flavor" data-value="fruity"><i data-lucide="citrus" class="pill-ic"></i>Fruity Ice</button>
+                <button class="pill" data-scope="l" data-key="flavor" data-value="tobacco"><i data-lucide="leaf" class="pill-ic"></i>Rich Tobacco</button>
+                <button class="pill" data-scope="l" data-key="flavor" data-value="dessert"><i data-lucide="ice-cream-bowl" class="pill-ic"></i>Dessert / Cream</button>
+                <button class="pill" data-scope="l" data-key="flavor" data-value="menthol"><i data-lucide="snowflake" class="pill-ic"></i>Menthol Rush</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="mb-2.5 font-mono text-[10.5px] uppercase tracking-[0.24em] font-semibold text-mute">Nicotine Strength</p>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="mr-1 rounded-md bg-orange-100 px-2 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-rust">Salt Nic</span>
+                <button class="pill" data-scope="l" data-key="nic" data-value="salt:20">20mg</button>
+                <button class="pill" data-scope="l" data-key="nic" data-value="salt:25">25mg</button>
+                <button class="pill" data-scope="l" data-key="nic" data-value="salt:35">35mg</button>
+                <button class="pill" data-scope="l" data-key="nic" data-value="salt:50">50mg</button>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="mr-1 rounded-md bg-slate-100 px-2 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-slate-700">Freebase</span>
+                <button class="pill" data-scope="l" data-key="nic" data-value="fb:0">0mg</button>
+                <button class="pill" data-scope="l" data-key="nic" data-value="fb:3">3mg</button>
+                <button class="pill" data-scope="l" data-key="nic" data-value="fb:6">6mg</button>
+                <button class="pill" data-scope="l" data-key="nic" data-value="fb:12">12mg</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FEATURED / FILTERED GRID (Seamless with White Product Backgrounds) ===== -->
+    <div class="mt-16 md:mt-20">
+      <div class="rv mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ember">Curated Weekly · Karachi Stock</p>
+          <h2 class="mt-1 font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">Featured Products</h2>
+          <p class="mt-1.5 max-w-lg text-sm text-mute">Live-filtered by the finder above — inventory mirrors what's on the shelf at our 3 Karachi outlets.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <p id="resultMeta" class="font-mono text-[11px] uppercase tracking-wider font-semibold text-mute">Showing 13 products</p>
+          <button id="clearFilters" class="hidden items-center gap-1.5 rounded-full border border-slate-300 bg-white px-3.5 py-1.5 font-mono text-[10.5px] uppercase tracking-wider text-slate-700 transition-colors hover:border-rust hover:text-rust shadow-sm">
+            <i data-lucide="rotate-ccw" class="h-3.5 w-3.5"></i>Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div id="productGrid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+
+      <!-- Empty state -->
+      <div id="emptyState" class="hidden flex-col items-center justify-center rounded-3xl border border-dashed border-slate-300 bg-white py-20 text-center shadow-sm">
+        <span class="grid h-14 w-14 place-items-center rounded-2xl bg-slate-100 text-mute"><i data-lucide="search-x" class="h-7 w-7"></i></span>
+        <h3 class="mt-5 font-display text-xl font-bold text-ink">No products match those filters</h3>
+        <p class="mt-2 max-w-sm text-sm text-mute">Try a different combination — or message us on WhatsApp, we probably have it in-store.</p>
+        <button id="resetFromEmpty" class="mt-6 rounded-full border border-ember bg-orange-50 px-6 py-2.5 font-display text-sm font-semibold text-ember transition-all hover:bg-ember hover:text-white">Reset All Filters</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/brand-marquee.liquid
+============================================================ -->
+<section class="mq overflow-hidden border-y border-slate-200 bg-white py-8" aria-label="Popular brands">
+  <div class="mq-track">
+    <!-- set 1 -->
+    <div class="mq-set flex items-center gap-[4.5rem]">
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">VAPORESSO</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">VOOPOO</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">UWELL</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">VGOD</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">SKWEZED</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">GEEKVAPE</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">RUTHLESS</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400 transition-colors hover:text-ember">ELF BAR</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+    </div>
+    <!-- set 2 duplicate -->
+    <div class="mq-set flex items-center gap-[4.5rem]" aria-hidden="true">
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">VAPORESSO</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">VOOPOO</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">UWELL</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">VGOD</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">SKWEZED</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">GEEKVAPE</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">RUTHLESS</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-[0.22em] text-slate-400">ELF BAR</span><span class="h-1.5 w-1.5 rounded-full bg-ember/60"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/our-outlets.liquid
+============================================================ -->
+<section id="outlets" class="scroll-mt-28 py-24 bg-slate-50/70">
+  <div class="wrap">
+    <div class="rv mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ember">Physical Retail — 3 Locations</p>
+        <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">Visit Our Karachi Outlets</h2>
+      </div>
+      <a href="tel:+923362396603" class="group inline-flex items-center gap-2 font-mono text-sm font-semibold text-slate-700 transition-colors hover:text-ember">
+        <i data-lucide="phone-call" class="h-4 w-4 text-ember"></i> Hotline: 0336-2396603
+      </a>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Branch 1 — Bahadurabad (Main) -->
+      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_20px_45px_-15px_rgba(245,130,32,.2)]">
+        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-100/70 blur-2xl transition-opacity group-hover:bg-orange-200/80" aria-hidden="true"></div>
+        <div class="mb-5 flex items-start justify-between">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember"><i data-lucide="store" class="h-6 w-6"></i></span>
+          <span class="rounded-full bg-gradient-to-r from-ember to-rust px-3 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-white shadow-sm">Main Outlet</span>
+        </div>
+        <h3 class="font-display text-xl font-bold text-ink">Bahadurabad Branch</h3>
+        <p class="mt-2 text-sm leading-relaxed text-mute">Shop 4, Al-Mehran Square, Bahadurabad Chowrangi, Karachi.</p>
+        <div class="mt-5 space-y-2.5 border-t border-slate-100 pt-5 text-sm">
+          <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="clock" class="h-4 w-4 text-ember"></i>12 PM – 12 AM · 7 Days Open</p>
+          <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="phone" class="h-4 w-4 text-ember"></i>0336-2396603</p>
+        </div>
+        <div class="mt-6 flex gap-2.5">
+          <a href="https://www.google.com/maps/search/?api=1&query=Bahadurabad+Chowrangi+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
+          <a href="tel:+923362396603" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember" aria-label="Call Bahadurabad branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
+        </div>
+      </article>
+
+      <!-- Branch 2 — DHA / Clifton -->
+      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_20px_45px_-15px_rgba(245,130,32,.2)]" style="transition-delay:.1s">
+        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-100/70 blur-2xl transition-opacity group-hover:bg-orange-200/80" aria-hidden="true"></div>
+        <div class="mb-5 flex items-start justify-between">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember"><i data-lucide="store" class="h-6 w-6"></i></span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-slate-700">DHA Phase 6</span>
+        </div>
+        <h3 class="font-display text-xl font-bold text-ink">DHA / Clifton Branch</h3>
+        <p class="mt-2 text-sm leading-relaxed text-mute">35-C, Bukhari Commercial Lane 8, Phase 6, DHA, Karachi.</p>
+        <div class="mt-5 space-y-2.5 border-t border-slate-100 pt-5 text-sm">
+          <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="clock" class="h-4 w-4 text-ember"></i>1 PM – 1 AM · 7 Days Open</p>
+          <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="phone" class="h-4 w-4 text-ember"></i>0301-2396604</p>
+        </div>
+        <div class="mt-6 flex gap-2.5">
+          <a href="https://www.google.com/maps/search/?api=1&query=Bukhari+Commercial+Area+DHA+Phase+6+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
+          <a href="tel:+923012396604" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember" aria-label="Call DHA branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
+        </div>
+      </article>
+
+      <!-- Branch 3 — Gulshan -->
+      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_20px_45px_-15px_rgba(245,130,32,.2)]" style="transition-delay:.2s">
+        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-100/70 blur-2xl transition-opacity group-hover:bg-orange-200/80" aria-hidden="true"></div>
+        <div class="mb-5 flex items-start justify-between">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember"><i data-lucide="store" class="h-6 w-6"></i></span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-slate-700">Gulshan</span>
+        </div>
+        <h3 class="font-display text-xl font-bold text-ink">Gulshan-e-Iqbal Branch</h3>
+        <p class="mt-2 text-sm leading-relaxed text-mute">Shop 12, Main Rashid Minhas Rd, near Millennium Mall, Gulshan.</p>
+        <div class="mt-5 space-y-2.5 border-t border-slate-100 pt-5 text-sm">
+          <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="clock" class="h-4 w-4 text-ember"></i>12 PM – 11 PM · 7 Days Open</p>
+          <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="phone" class="h-4 w-4 text-ember"></i>0302-2396605</p>
+        </div>
+        <div class="mt-6 flex gap-2.5">
+          <a href="https://www.google.com/maps/search/?api=1&query=Rashid+Minhas+Road+Gulshan+e+Iqbal+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
+          <a href="tel:+923022396605" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember" aria-label="Call Gulshan branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Callout -->
+    <div class="rv mt-8 flex flex-col items-start gap-5 overflow-hidden rounded-3xl bg-gradient-to-r from-ember via-[#EA7215] to-rust p-7 text-white shadow-lg md:flex-row md:items-center md:justify-between md:p-9">
+      <div class="flex items-start gap-4">
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-black/20 text-white"><i data-lucide="droplets" class="h-6 w-6"></i></span>
+        <div>
+          <h3 class="font-display text-xl font-bold md:text-2xl">Try Flavors In-Person &amp; Consult with Our Vape Specialists</h3>
+          <p class="mt-1 text-sm font-medium text-orange-100">Free coil builds, device setup &amp; flavor sampling bars at every outlet — walk in anytime.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/923362396603?text=Hi!%20Which%20Vape%20Jam%20outlet%20has%20flavor%20tasting%20available%20today%3F" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3.5 font-display text-sm font-bold text-slate-900 shadow-md transition-transform hover:scale-105 active:scale-95">
+        <i data-lucide="message-circle" class="h-4.5 w-4.5 text-ember"></i>WhatsApp an Outlet
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/community-banner.liquid
+============================================================ -->
+<section id="deals" class="scroll-mt-28 pb-24">
+  <div class="wrap">
+    <div class="rv relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-900 via-slate-950 to-black text-white shadow-2xl">
+      <img src="https://images.pexels.com/photos/17774111/pexels-photo-17774111.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Karachi vape community member" class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20 [mask-image:linear-gradient(90deg,transparent_20%,#000_80%)]" loading="lazy" />
+      <div class="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-ember/20 blur-[100px]" aria-hidden="true"></div>
+
+      <div class="relative grid gap-10 p-7 md:p-12 lg:grid-cols-2 lg:gap-14">
+        <!-- Copy -->
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ember">Karachi Vape Community · Authenticity First</p>
+          <h2 class="mt-3 font-display text-3xl font-bold leading-tight tracking-tight md:text-[2.6rem]">Switch. Verify. <span class="grad-ember">Connect.</span></h2>
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-slate-300 md:text-base">
+            We're more than a shop. From local vape meets and coil workshops to free scratch-code authenticity verification — and one-on-one guidance for adult smokers.
+          </p>
+          <ul class="mt-7 space-y-3.5">
+            <li class="flex items-start gap-3 text-sm text-slate-200"><i data-lucide="circle-check-big" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-ember"></i>Free scratch-code authenticity checks on every device &amp; bottle.</li>
+            <li class="flex items-start gap-3 text-sm text-slate-200"><i data-lucide="cigarette-off" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-ember"></i>Guided "Quit Smoking" transition plans — pick the right pod &amp; nicotine strength.</li>
+            <li class="flex items-start gap-3 text-sm text-slate-200"><i data-lucide="users" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-ember"></i>Monthly Karachi meetups: flavor tastings &amp; exclusive member flash deals.</li>
+          </ul>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://wa.me/923362396603?text=Hi%20Vape%20Jam!%20I%20want%20help%20switching%20from%20smoking%20to%20vaping." target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-ember to-rust px-6 py-3 font-display text-sm font-semibold text-white transition-all hover:brightness-110 hover:shadow-[0_0_30px_-6px_rgba(245,130,32,.8)] active:scale-95">
+              <i data-lucide="message-circle" class="h-4 w-4"></i>Join the Movement
+            </a>
+            <a href="https://wa.me/923362396603?text=Hi!%20Please%20verify%20my%20batch%20code%3A%20" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 font-display text-sm font-semibold text-white transition-all hover:border-ember hover:text-ember active:scale-95">
+              <i data-lucide="badge-check" class="h-4 w-4 text-ember"></i>Verify My Batch
+            </a>
+          </div>
+        </div>
+
+        <!-- Stat chips -->
+        <div class="grid content-center gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"><i data-lucide="store" class="h-5 w-5 text-ember"></i><p class="mt-3 font-display text-2xl font-bold">3 Outlets</p><p class="mt-1 text-xs text-slate-400">Bahadurabad · DHA · Gulshan — one city, fully covered.</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"><i data-lucide="timer" class="h-5 w-5 text-ember"></i><p class="mt-3 font-display text-2xl font-bold">Same-Day</p><p class="mt-1 text-xs text-slate-400">Riders dispatched across Karachi before 8 PM daily.</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"><i data-lucide="shield-check" class="h-5 w-5 text-ember"></i><p class="mt-3 font-display text-2xl font-bold">100% Original</p><p class="mt-1 text-xs text-slate-400">Every batch verified against official manufacturer codes.</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"><i data-lucide="award" class="h-5 w-5 text-ember"></i><p class="mt-3 font-display text-2xl font-bold">Expert Crew</p><p class="mt-1 text-xs text-slate-400">Real vapers on shift — device matching done right.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     SHOPIFY SECTION → sections/footer.liquid
+============================================================ -->
+<footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
+  <div class="wrap grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+
+    <!-- Col 1: Brand & Logo -->
+    <div>
+      <a href="#top" class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-black p-1">
+          <img src="logo.png" alt="Vape Jam Logo" class="h-full w-full object-contain" />
+        </div>
+        <span class="font-display text-xl font-bold tracking-tight text-white">VAPE<span class="text-ember">JAM</span></span>
+      </a>
+      <p class="mt-4 text-sm leading-relaxed text-slate-400">Born in Karachi, built for vapers. Vape Jam curates only verified, original international hardware &amp; e-liquids — zero clones, zero compromises.</p>
+      <div class="mt-5 space-y-2.5 text-sm">
+        <p class="flex items-center gap-2.5 text-slate-300"><i data-lucide="phone-call" class="h-4 w-4 text-ember"></i>Karachi Hotline: 0336-2396603</p>
+        <p class="flex items-center gap-2.5 text-slate-300"><i data-lucide="clock" class="h-4 w-4 text-ember"></i>Open Daily · 12 PM – 12 AM</p>
+      </div>
+      <div class="mt-5 flex gap-2.5">
+        <a href="#" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-full border border-slate-700 text-slate-400 transition-all hover:border-ember hover:text-ember"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+        <a href="#" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-full border border-slate-700 text-slate-400 transition-all hover:border-ember hover:text-ember"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+        <a href="https://wa.me/923362396603" aria-label="WhatsApp" class="grid h-9 w-9 place-items-center rounded-full border border-slate-700 text-slate-400 transition-all hover:border-ember hover:text-ember"><i data-lucide="message-circle" class="h-4 w-4"></i></a>
+        <a href="mailto:hello@vapejam.pk" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-full border border-slate-700 text-slate-400 transition-all hover:border-ember hover:text-ember"><i data-lucide="mail" class="h-4 w-4"></i></a>
+      </div>
+    </div>
+
+    <!-- Col 2: Quick links -->
+    <div>
+      <h4 class="font-mono text-[11px] uppercase tracking-[0.3em] font-semibold text-white/70">Quick Links</h4>
+      <ul class="mt-5 space-y-3 text-sm">
+        <li><a href="#shop" class="text-slate-400 transition-colors hover:text-ember">All Collections</a></li>
+        <li><a href="#shop" class="text-slate-400 transition-colors hover:text-ember">Pod Systems</a></li>
+        <li><a href="#shop" class="text-slate-400 transition-colors hover:text-ember">E-Liquids &amp; Salt Nic</a></li>
+        <li><a href="#deals" class="text-slate-400 transition-colors hover:text-ember">Warranty &amp; Authenticity</a></li>
+        <li><a href="#" class="text-slate-400 transition-colors hover:text-ember">Returns &amp; Exchange</a></li>
+        <li><a href="#outlets" class="text-slate-400 transition-colors hover:text-ember">Karachi Store Locator</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Karachi delivery -->
+    <div>
+      <h4 class="font-mono text-[11px] uppercase tracking-[0.3em] font-semibold text-white/70">Karachi Delivery Info</h4>
+      <ul class="mt-5 space-y-4 text-sm">
+        <li class="flex items-start gap-3"><i data-lucide="truck" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-ember"></i><span class="text-slate-400"><span class="text-white font-medium">Same-Day Riders</span> — order before 8 PM, delivered tonight across Karachi.</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="banknote" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-ember"></i><span class="text-slate-400"><span class="text-white font-medium">Cash on Delivery</span> — inspect your parcel, then pay. Zero risk.</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="package-check" class="mt-0.5 h-4.5 w-4.5 shrink-0 text-ember"></i><span class="text-slate-400"><span class="text-white font-medium">Nationwide Shipping</span> — Trax &amp; Leopards courier with live tracking, 2–4 days.</span></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Age notice + newsletter -->
+    <div>
+      <div class="rounded-2xl border border-rust/40 bg-rust/10 p-4">
+        <p class="flex items-center gap-2 font-display text-sm font-bold text-rust"><i data-lucide="shield-alert" class="h-4.5 w-4.5"></i>Strictly 21+ Only</p>
+        <p class="mt-2 text-xs leading-relaxed text-slate-400">Nicotine is an addictive substance. Products are intended for adult smokers &amp; vapers only.</p>
+      </div>
+      <h4 class="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] font-semibold text-white/70">Get 10% Off Your First Order</h4>
+      <form id="newsForm" class="mt-4 flex overflow-hidden rounded-xl border border-slate-700 bg-slate-800 focus-within:border-ember">
+        <input id="newsEmail" type="email" required placeholder="your@email.com" class="w-full bg-transparent px-4 py-3 text-sm outline-none text-white placeholder-slate-400" />
+        <button type="submit" class="grid w-12 shrink-0 place-items-center bg-gradient-to-r from-ember to-rust text-white transition-all hover:brightness-110" aria-label="Subscribe"><i data-lucide="send" class="h-4.5 w-4.5"></i></button>
+      </form>
+      <p id="newsMsg" class="mt-3 hidden text-xs font-medium text-ember"></p>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-800">
+    <div class="wrap flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
+      <p class="font-mono text-[11px] text-slate-400">© 2025 Vape Jam — Karachi, Pakistan. All rights reserved.</p>
+      <div class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-slate-400">
+        <span class="rounded-md border border-slate-700 px-2.5 py-1">COD</span>
+        <span class="rounded-md border border-slate-700 px-2.5 py-1">Bank Transfer</span>
+        <span class="rounded-md border border-slate-700 px-2.5 py-1">Cards</span>
+        <span class="ml-2 text-ember font-medium">Prototyped with ♥ in Karachi</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING WHATSAPP ACTION
+============================================================ -->
+<a href="https://wa.me/923362396603?text=Hi%20Vape%20Jam!%20I%20need%20help%20placing%20an%20order." target="_blank" rel="noopener" class="group fixed bottom-5 right-5 z-[55] flex items-center gap-3" aria-label="Chat with Karachi Outlet on WhatsApp">
+  <span class="pointer-events-none translate-x-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-800 opacity-0 shadow-xl backdrop-blur transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">Chat with Karachi Outlet</span>
+  <span class="wa-glow relative grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white">
+    <i data-lucide="message-circle" class="h-7 w-7 fill-white/20"></i>
+    <span class="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5">
+      <span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-ember"></span>
+      <span class="relative inline-flex h-3.5 w-3.5 rounded-full border-2 border-white bg-ember"></span>
+    </span>
+  </span>
+</a>
+
+<!-- ============================================================
+     SHOPIFY SECTION → snippets/cart-drawer.liquid
+============================================================ -->
+<div id="cartOverlay" class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"></div>
+<aside id="cartDrawer" class="fixed right-0 top-0 z-[70] flex h-full w-full max-w-md flex-col border-l border-slate-200 bg-white shadow-2xl" role="dialog" aria-label="Shopping cart">
+  <div class="flex items-center justify-between border-b border-slate-200 px-6 py-5 bg-slate-50/70">
+    <h3 class="flex items-center gap-2.5 font-display text-lg font-bold text-ink"><i data-lucide="shopping-bag" class="h-5 w-5 text-ember"></i>Your Cart <span id="cartHeadCount" class="font-mono text-xs text-mute">(0)</span></h3>
+    <button id="closeCart" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-slate-400 hover:text-ink" aria-label="Close cart"><i data-lucide="x" class="h-4.5 w-4.5"></i></button>
+  </div>
+
+  <!-- Free same-day delivery progress -->
+  <div class="border-b border-slate-200 px-6 py-4 bg-orange-50/40">
+    <p id="shipMsg" class="text-xs text-slate-700">Add <span class="font-bold text-ember">Rs. 5,000</span> more for <span class="font-semibold text-ink">FREE same-day delivery</span> in Karachi.</p>
+    <div class="mt-2.5 h-2 overflow-hidden rounded-full bg-slate-200"><div id="shipBar" class="h-full w-0 rounded-full bg-gradient-to-r from-ember to-rust transition-all duration-500"></div></div>
+  </div>
+
+  <div id="cartItems" class="flex-1 space-y-4 overflow-y-auto px-6 py-5 bg-white"></div>
+
+  <div class="border-t border-slate-200 px-6 py-5 bg-slate-50">
+    <div class="mb-1.5 flex items-center justify-between text-sm text-slate-600 font-medium"><span>Subtotal</span><span id="cartSubtotal" class="font-display text-xl font-bold text-ink">Rs. 0</span></div>
+    <p class="mb-4 text-[11px] text-mute font-medium">COD available across Karachi · 21+ ID check on delivery</p>
+    <a id="cartCheckout" href="https://wa.me/923362396603" target="_blank" rel="noopener" class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-ember to-rust py-3.5 font-display font-semibold text-white transition-all hover:brightness-105 hover:shadow-[0_8px_25px_-6px_rgba(245,130,32,.7)] active:scale-95">
+      <i data-lucide="message-circle" class="h-4.5 w-4.5"></i>Checkout via WhatsApp
+    </a>
+    <button id="continueShopping" class="mt-2.5 w-full py-2 text-center text-xs font-semibold text-slate-600 transition-colors hover:text-ink">Continue shopping</button>
+  </div>
+</aside>
+
+<!-- Toasts -->
+<div id="toasts" class="fixed bottom-5 left-5 z-[80] flex flex-col gap-2.5"></div>
+
+<!-- ============================================================
+     APPLICATION LOGIC
+============================================================ -->
+<script>
+/* ------------------------------------------------------------------
+   0. ICON INIT
+------------------------------------------------------------------ */
+lucide.createIcons();
+
+const PKR = n => 'Rs. ' + n.toLocaleString('en-US');
+const WA  = '923362396603';
+
+/* ------------------------------------------------------------------
+   1. PRODUCT DATA MODEL
+------------------------------------------------------------------ */
+const PRODUCTS = [
+  /* — Devices — */
+  { id:'d1', kind:'device', brand:'vaporesso', brandLabel:'Vaporesso', type:'pod',        name:'XROS 4 Pod Kit',            badge:'Best Seller',   price:7499,  spec:'Pod System · 1000mAh',      accent:'#F58220', viz:'pod',  vtext:'XROS' },
+  { id:'d2', kind:'device', brand:'uwell',     brandLabel:'Uwell',     type:'pod',        name:'Caliburn GK3',              badge:'New',           price:6999,  spec:'Pod System · 900mAh',       accent:'#D9531E', viz:'pod',  vtext:'GK3' },
+  { id:'d3', kind:'device', brand:'voopoo',    brandLabel:'Voopoo',    type:'boxmod',     name:'Drag S2 Pod Mod Kit',       badge:'100% Original', price:12999, spec:'Pod Mod · 2500mAh · 60W',   accent:'#DE4A26', viz:'mod',  vtext:'60W' },
+  { id:'d4', kind:'device', brand:'geekvape',  brandLabel:'Geekvape',  type:'boxmod',     name:'Aegis Legend 3 Mod',        badge:'100% Original', price:16499, spec:'Box Mod · 2×18650 · 200W',  accent:'#F58220', viz:'mod',  vtext:'200W' },
+  { id:'d5', kind:'device', brand:'oxva',      brandLabel:'OXVA',      type:'pod',        name:'XLIM Pro 2',                badge:'Best Seller',   price:6499,  spec:'Pod System · 1300mAh',      accent:'#F58220', viz:'pod',  vtext:'XLIM' },
+  { id:'d6', kind:'device', brand:'uwell',     brandLabel:'Uwell',     type:'cart',       name:'Caliburn G3 Pods (4-Pack)', badge:'100% Original', price:2299,  spec:'Replacement Pod · 0.6Ω',    accent:'#D9531E', viz:'cart', vtext:'0.6Ω' },
+  { id:'d7', kind:'device', brand:'elfbar',    brandLabel:'Elf Bar',   type:'disposable', name:'TE6000 Disposable',         badge:'New',           price:3200,  spec:'Disposable · 6000 Puffs',   accent:'#F58220', viz:'disp', vtext:'6K' },
+  /* — E-Liquids — */
+  { id:'l1', kind:'liquid', brand:'vgod',     brandLabel:'VGOD',            size:'30ml',  nicKey:'salt:50', flavor:'tobacco', name:'Cubano Salt Nic',        badge:'Salt Nic',      price:3800, spec:'30ml · Salt 50mg',  accent:'#A9764F', viz:'bottle', vtext:'VGOD',  vsub:'CUBANO',        vspec:'50MG · 30ML' },
+  { id:'l2', kind:'liquid', brand:'skwezed',  brandLabel:'Skwezed',         size:'30ml',  nicKey:'salt:25', flavor:'fruity',  name:'Green Apple Ice Salt',   badge:'Best Seller',   price:3500, spec:'30ml · Salt 25mg',  accent:'#F58220', viz:'bottle', vtext:'SKWZ',  vsub:'GREEN APPLE ICE',vspec:'25MG · 30ML' },
+  { id:'l3', kind:'liquid', brand:'ruthless', brandLabel:'Ruthless',        size:'100ml', nicKey:'fb:3',    flavor:'fruity',  name:'Grape Drank Freebase',   badge:'100% Original', price:4200, spec:'100ml · Freebase 3mg', accent:'#8B5CF6', viz:'bottle', vtext:'RTHLS', vsub:'GRAPE DRANK',   vspec:'3MG · 100ML' },
+  { id:'l4', kind:'liquid', brand:'nasty',    brandLabel:'Nasty Juice',     size:'60ml',  nicKey:'fb:3',    flavor:'fruity',  name:'Cush Man Mango Freebase',badge:'100% Original', price:4000, spec:'60ml · Freebase 3mg',  accent:'#D9531E', viz:'bottle', vtext:'NASTY', vsub:'CUSH MAN',      vspec:'3MG · 60ML' },
+  { id:'l5', kind:'liquid', brand:'blvk',     brandLabel:'BLVK',            size:'30ml',  nicKey:'salt:35', flavor:'menthol', name:'Mint Ice Salt Nic',      badge:'New',           price:3600, spec:'30ml · Salt 35mg',  accent:'#0D9488', viz:'bottle', vtext:'BLVK',  vsub:'MINT ICE',      vspec:'35MG · 30ML' },
+  { id:'l6', kind:'liquid', brand:'grand',    brandLabel:'Grand E-Liquids', size:'60ml',  nicKey:'fb:6',    flavor:'dessert', name:'Vanilla Custard Freebase',badge:'100% Original', price:4000, spec:'60ml · Freebase 6mg',  accent:'#D97706', viz:'bottle', vtext:'GRAND', vsub:'VANILLA CUSTARD',vspec:'6MG · 60ML' },
+];
+
+/* ------------------------------------------------------------------
+   2. CLEAN PRODUCT ART (Engineered for White Product Backgrounds)
+------------------------------------------------------------------ */
+function art(p, tag){
+  const a = p.accent, id = p.id + (tag||'');
+  const defs = `
+    <defs>
+      <linearGradient id="${id}-b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2D3748"/><stop offset=".5" stop-color="#1A202C"/><stop offset="1" stop-color="#2D3748"/></linearGradient>
+      <radialGradient id="${id}-h" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="${a}" stop-opacity=".12"/><stop offset="100%" stop-color="${a}" stop-opacity="0"/></radialGradient>
+      <filter id="${id}-sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".12"/></filter>
+    </defs>`;
+  const base = `<circle cx="100" cy="118" r="88" fill="url(#${id}-h)"/><ellipse cx="100" cy="207" rx="54" ry="7" fill="#64748B" opacity=".18"/>`;
+  const mono = (x,y,s,t,c,o,w)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="${s}" font-weight="${w||700}" fill="${c}" opacity="${o}">${t}</text>`;
+  let shape = '';
+  if(p.viz==='pod') shape = `
+    <g filter="url(#${id}-sh)">
+      <rect x="86" y="18" width="28" height="14" rx="5" fill="#1E293B" stroke="#334155"/>
+      <rect x="74" y="30" width="52" height="164" rx="16" fill="url(#${id}-b)" stroke="#334155"/>
+      <rect x="74" y="112" width="52" height="3" fill="${a}"/>
+      <circle cx="100" cy="140" r="3.5" fill="${a}"/><circle cx="100" cy="140" r="9" fill="${a}" opacity=".25"/>
+      <rect x="81" y="44" width="4" height="122" rx="2" fill="#fff" opacity=".12"/>
+      ${mono(100,99,15,p.vtext,'#FFFFFF',.3)}
+    </g>`;
+  else if(p.viz==='mod') shape = `
+    <g filter="url(#${id}-sh)">
+      <rect x="84" y="34" width="32" height="14" rx="5" fill="#1E293B" stroke="#334155"/>
+      <rect x="60" y="46" width="80" height="148" rx="20" fill="url(#${id}-b)" stroke="#334155"/>
+      <rect x="72" y="66" width="38" height="30" rx="6" fill="#0F172A" stroke="#334155"/>
+      ${mono(91,86,11,p.vtext,a,1)}
+      <circle cx="124" cy="81" r="6.5" fill="${a}"/><circle cx="124" cy="81" r="12" fill="${a}" opacity=".25"/>
+      <rect x="72" y="110" width="56" height="2.5" rx="1.25" fill="#475569"/><rect x="72" y="118" width="42" height="2.5" rx="1.25" fill="#475569"/>
+      ${mono(100,168,12,p.brandLabel.toUpperCase().slice(0,6),'#FFFFFF',.25)}
+      <rect x="68" y="58" width="4" height="122" rx="2" fill="#fff" opacity=".12"/>
+    </g>`;
+  else if(p.viz==='disp') shape = `
+    <g filter="url(#${id}-sh)">
+      <rect x="88" y="16" width="24" height="14" rx="6" fill="#1E293B" stroke="#334155"/>
+      <rect x="70" y="26" width="60" height="170" rx="28" fill="url(#${id}-b)" stroke="#334155"/>
+      <rect x="70" y="118" width="60" height="3.5" fill="${a}"/>
+      <rect x="70" y="127" width="60" height="69" rx="27" fill="${a}" opacity=".2"/>
+      <circle cx="100" cy="176" r="3.5" fill="${a}"/><circle cx="100" cy="176" r="9" fill="${a}" opacity=".25"/>
+      ${mono(100,92,13,p.vtext,'#FFFFFF',.35)}
+      <rect x="77" y="40" width="4" height="132" rx="2" fill="#fff" opacity=".12"/>
+    </g>`;
+  else if(p.viz==='cart') shape = `
+    <g filter="url(#${id}-sh)">
+      <rect x="88" y="34" width="24" height="16" rx="5" fill="#1E293B" stroke="#334155"/>
+      <rect x="70" y="50" width="60" height="92" rx="10" fill="#1E293B" stroke="#334155"/>
+      <rect x="74" y="88" width="52" height="50" rx="7" fill="${a}" opacity=".2"/>
+      <rect x="93" y="56" width="14" height="36" fill="#0F172A"/>
+      ${mono(100,74,9,p.vtext,'#94A3B8',1,500)}
+      <rect x="64" y="142" width="72" height="32" rx="8" fill="url(#${id}-b)" stroke="#334155"/>
+      <rect x="82" y="149" width="3.5" height="18" rx="1.75" fill="${a}" opacity=".8"/><rect x="98" y="149" width="3.5" height="18" rx="1.75" fill="${a}" opacity=".8"/><rect x="114" y="149" width="3.5" height="18" rx="1.75" fill="${a}" opacity=".8"/>
+    </g>`;
+  else shape = `
+    <g filter="url(#${id}-sh)">
+      <rect x="72" y="20" width="56" height="20" rx="7" fill="#1E293B" stroke="#334155"/>
+      <path d="M88 40h24l-3.5 18h-17L88 40z" fill="#2D3748" stroke="#334155"/>
+      <rect x="58" y="58" width="84" height="132" rx="18" fill="url(#${id}-b)" stroke="#334155"/>
+      <rect x="66" y="96" width="68" height="68" rx="8" fill="#0F172A" stroke="#334155"/>
+      <rect x="66" y="96" width="68" height="6" rx="3" fill="${a}"/>
+      ${mono(100,127,14,p.vtext,'#FFFFFF',.95)}
+      ${mono(100,142,7,p.vsub,'#94A3B8',1,600)}
+      ${mono(100,156,8,p.vspec,a,1,700)}
+      <rect x="66" y="66" width="5" height="112" rx="2.5" fill="#fff" opacity=".12"/>
+    </g>`;
+  return `<svg viewBox="0 0 200 240" class="h-full w-full" aria-hidden="true">${defs}${base}${shape}</svg>`;
+}
+
+/* Badge styles */
+const BADGES = {
+  'Best Seller'  : 'bg-gradient-to-r from-ember to-rust text-white shadow-sm',
+  'New'          : 'bg-slate-900 text-white shadow-sm',
+  'Salt Nic'     : 'bg-rust text-white shadow-sm',
+  '100% Original': 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+};
+
+/* ------------------------------------------------------------------
+   3. FINDER STATE + LIVE FILTERING
+------------------------------------------------------------------ */
+const state = { tab:'d', q:'',
+  d:{ brand:'all', type:'all' },
+  l:{ brand:'all', size:'all', nic:'all', flavor:'all' } };
+
+const grid = document.getElementById('productGrid');
+const meta = document.getElementById('resultMeta');
+const emptyEl = document.getElementById('emptyState');
+const clearBtn = document.getElementById('clearFilters');
+
+function cardHTML(p, i){
+  const waText = encodeURIComponent(`Hi Vape Jam! I'd like to order: ${p.brandLabel} ${p.name} (${PKR(p.price)}). Is it available for delivery?`);
+  return `
+  <article class="prod group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]"
+    style="animation-delay:${i*45}ms"
+    data-kind="${p.kind}" data-brand="${p.brand}" ${p.type?`data-type="${p.type}"`:''} ${p.size?`data-size="${p.size}"`:''} ${p.nicKey?`data-nic="${p.nicKey}"`:''} ${p.flavor?`data-flavor="${p.flavor}"`:''} data-name="${(p.brandLabel+' '+p.name).toLowerCase()}">
+    
+    <!-- White Background Product Visual Container -->
+    <div class="relative aspect-[4/5] overflow-hidden bg-white p-6 border-b border-slate-100 flex items-center justify-center">
+      <div class="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.06] group-hover:-rotate-1">${art(p)}</div>
+      <span class="absolute left-3.5 top-3.5 rounded-full px-3 py-1 font-mono text-[9px] font-bold uppercase tracking-widest ${BADGES[p.badge]||''}">${p.badge}</span>
+      <button data-wish="${p.id}" class="absolute right-3.5 top-3.5 grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/90 text-slate-500 shadow-sm backdrop-blur transition-all hover:border-ember hover:text-ember" aria-label="Add to wishlist">
+        <i data-lucide="heart" class="h-4 w-4"></i>
+      </button>
+    </div>
+    
+    <!-- Product Info -->
+    <div class="flex flex-1 flex-col p-5 bg-white">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-mute">${p.brandLabel}</p>
+      <h3 class="mt-1 font-display text-[16px] font-bold leading-snug tracking-tight text-ink">${p.name}</h3>
+      <span class="mt-2 inline-flex w-fit items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[9.5px] font-medium uppercase tracking-wider text-slate-600">${p.spec}</span>
+      <div class="mt-auto pt-4">
+        <p class="font-display text-xl font-bold text-ink">${PKR(p.price)}</p>
+        <div class="mt-3 flex gap-2">
+          <button data-add="${p.id}" class="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-ember to-rust py-2.5 font-display text-[13px] font-bold text-white shadow-sm transition-all hover:brightness-105 hover:shadow-[0_6px_20px_-4px_rgba(245,130,32,.5)] active:scale-95">
+            <i data-lucide="shopping-bag" class="h-4 w-4"></i>Add to Cart
+          </button>
+          <a href="https://wa.me/${WA}?text=${waText}" target="_blank" rel="noopener" class="grid w-11 place-items-center rounded-xl border border-slate-200 bg-white text-[#25D366] transition-all hover:border-[#25D366] hover:bg-emerald-50 active:scale-95 shadow-sm" aria-label="Order ${p.name} via WhatsApp">
+            <i data-lucide="message-circle" class="h-4.5 w-4.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+
+function matches(p){
+  const q = state.q.trim().toLowerCase();
+  const inQ = !q || (p.brandLabel+' '+p.name+' '+p.spec).toLowerCase().includes(q);
+  if(state.tab === 'd'){
+    if(p.kind !== 'device') return false;
+    const f = state.d;
+    return inQ && (f.brand==='all'||p.brand===f.brand) && (f.type==='all'||p.type===f.type);
+  }
+  if(p.kind !== 'liquid') return false;
+  const f = state.l;
+  return inQ && (f.brand==='all'||p.brand===f.brand) && (f.size==='all'||p.size===f.size)
+       && (f.nic==='all'||p.nicKey===f.nic) && (f.flavor==='all'||p.flavor===f.flavor);
+}
+
+function applyFilters(){
+  const list = PRODUCTS.filter(matches);
+  grid.innerHTML = list.map(cardHTML).join('');
+  lucide.createIcons();
+  syncWishUI();
+  const label = state.tab==='d' ? 'Devices & Pods' : 'E-Liquids';
+  meta.textContent = `Showing ${list.length} of ${PRODUCTS.length} · ${label}`;
+  emptyEl.classList.toggle('hidden', list.length>0);
+  emptyEl.classList.toggle('flex', list.length===0);
+  grid.classList.toggle('hidden', list.length===0);
+  const dirty = state.q || Object.values(state.d).some(v=>v!=='all') || Object.values(state.l).some(v=>v!=='all');
+  clearBtn.classList.toggle('hidden', !dirty);
+  clearBtn.classList.toggle('inline-flex', !!dirty);
+}
+
+/* Pill clicks */
+document.querySelectorAll('.pill').forEach(p=>{
+  p.addEventListener('click', ()=>{
+    const {scope, key, value} = p.dataset;
+    const cur = state[scope][key];
+    state[scope][key] = (key==='nic' && cur===value) ? 'all' : value;
+    document.querySelectorAll(`.pill[data-scope="${scope}"][data-key="${key}"]`)
+      .forEach(x=>x.classList.toggle('active', x.dataset.value===state[scope][key]));
+    applyFilters();
+  });
+});
+
+/* Tabs */
+const tabD = document.getElementById('tabDevices'), tabL = document.getElementById('tabLiquids');
+const panelD = document.getElementById('panelDevices'), panelL = document.getElementById('panelLiquids');
+function setTab(t){
+  state.tab = t;
+  tabD.classList.toggle('active', t==='d'); tabD.setAttribute('aria-selected', t==='d');
+  tabL.classList.toggle('active', t==='l'); tabL.setAttribute('aria-selected', t==='l');
+  panelD.classList.toggle('hidden', t!=='d'); panelL.classList.toggle('hidden', t!=='l');
+  applyFilters();
+}
+tabD.addEventListener('click', ()=>setTab('d'));
+tabL.addEventListener('click', ()=>setTab('l'));
+
+/* Header nav shortcuts */
+document.querySelectorAll('[data-goto-filter]').forEach(a=>{
+  a.addEventListener('click', ()=>{
+    const [tab, preset] = a.dataset.gotoFilter.split(':');
+    setTab(tab);
+    if(tab==='d' && preset!=='all'){
+      state.d.type = preset;
+      document.querySelectorAll('.pill[data-scope="d"][data-key="type"]').forEach(x=>x.classList.toggle('active', x.dataset.value===preset));
+    }
+    applyFilters();
+    document.getElementById('mobileMenu').classList.add('hidden');
+  });
+});
+
+/* Reset */
+function resetFilters(){
+  state.d = {brand:'all',type:'all'}; state.l = {brand:'all',size:'all',nic:'all',flavor:'all'}; state.q='';
+  document.getElementById('searchInput').value=''; const sm=document.getElementById('searchInputM'); if(sm) sm.value='';
+  document.querySelectorAll('.pill').forEach(x=>x.classList.toggle('active', x.dataset.value==='all'));
+  applyFilters();
+}
+clearBtn.addEventListener('click', resetFilters);
+document.getElementById('resetFromEmpty').addEventListener('click', resetFilters);
+
+/* Quick search */
+let scrolledForSearch = false;
+function bindSearch(id){
+  const el = document.getElementById(id); if(!el) return;
+  el.addEventListener('input', ()=>{
+    state.q = el.value; applyFilters();
+    if(el.value.trim().length>1 && !scrolledForSearch){
+      scrolledForSearch = true;
+      document.getElementById('shop').scrollIntoView({behavior:'smooth'});
+    }
+    if(!el.value.trim()) scrolledForSearch = false;
+  });
+}
+bindSearch('searchInput'); bindSearch('searchInputM');
+
+/* ------------------------------------------------------------------
+   4. CART SYSTEM
+------------------------------------------------------------------ */
+const cart = new Map();
+const drawer = document.getElementById('cartDrawer'), overlay = document.getElementById('cartOverlay');
+
+function cartQty(){ let n=0; cart.forEach(q=>n+=q); return n; }
+function cartTotal(){ let t=0; cart.forEach((q,id)=>{ t += PRODUCTS.find(p=>p.id===id).price * q; }); return t; }
+
+function openCart(){ drawer.classList.add('open'); overlay.classList.add('open'); document.body.classList.add('overflow-hidden'); }
+function closeCartFn(){ drawer.classList.remove('open'); overlay.classList.remove('open'); if(sessionStorage.getItem('vj21')==='1') document.body.classList.remove('overflow-hidden'); }
+document.getElementById('cartBtn').addEventListener('click', openCart);
+document.getElementById('closeCart').addEventListener('click', closeCartFn);
+document.getElementById('continueShopping').addEventListener('click', closeCartFn);
+overlay.addEventListener('click', closeCartFn);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCartFn(); });
+
+function renderCart(){
+  const itemsEl = document.getElementById('cartItems');
+  const total = cartTotal(), qty = cartQty();
+  document.getElementById('cartCount').textContent = qty;
+  document.getElementById('cartHeadCount').textContent = `(${qty})`;
+  document.getElementById('cartSubtotal').textContent = PKR(total);
+  /* Free delivery progress */
+  const TH = 5000, pct = Math.min(100, Math.round(total/TH*100));
+  document.getElementById('shipBar').style.width = pct + '%';
+  document.getElementById('shipMsg').innerHTML = total >= TH
+    ? `<span class="font-bold text-ember">FREE same-day delivery unlocked</span> — Karachi riders ready.`
+    : `Add <span class="font-bold text-ember">${PKR(TH-total)}</span> more for <span class="font-semibold text-ink">FREE same-day delivery</span> in Karachi.`;
+  
+  if(qty===0){
+    itemsEl.innerHTML = `<div class="flex h-full flex-col items-center justify-center py-14 text-center">
+      <span class="grid h-14 w-14 place-items-center rounded-2xl bg-slate-100 text-mute"><i data-lucide="shopping-bag" class="h-7 w-7"></i></span>
+      <p class="mt-4 font-display font-bold text-ink">Your cart is empty</p>
+      <p class="mt-1 text-xs text-mute">Explore the best sellers above to add items.</p></div>`;
+  } else {
+    itemsEl.innerHTML = [...cart.entries()].map(([id,q])=>{
+      const p = PRODUCTS.find(x=>x.id===id);
+      return `<div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm">
+        <div class="h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-white border border-slate-100 p-1 flex items-center justify-center">${art(p,'c')}</div>
+        <div class="min-w-0 flex-1">
+          <p class="truncate font-display text-sm font-bold text-ink">${p.name}</p>
+          <p class="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-mute">${p.spec}</p>
+          <div class="mt-2.5 flex items-center justify-between">
+            <div class="flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-1.5 py-0.5">
+              <button data-cart-dec="${id}" class="grid h-6 w-6 place-items-center rounded-full text-slate-600 transition-colors hover:bg-white hover:text-ember" aria-label="Decrease"><i data-lucide="minus" class="h-3.5 w-3.5"></i></button>
+              <span class="min-w-4 text-center font-mono text-xs font-bold text-ink">${q}</span>
+              <button data-cart-inc="${id}" class="grid h-6 w-6 place-items-center rounded-full text-slate-600 transition-colors hover:bg-white hover:text-ember" aria-label="Increase"><i data-lucide="plus" class="h-3.5 w-3.5"></i></button>
+            </div>
+            <span class="font-display text-sm font-bold text-ember">${PKR(p.price*q)}</span>
+          </div>
+        </div>
+        <button data-cart-rem="${id}" class="self-start text-slate-400 transition-colors hover:text-rust" aria-label="Remove"><i data-lucide="trash-2" class="h-4 w-4"></i></button>
+      </div>`;
+    }).join('');
+  }
+  
+  const lines = [...cart.entries()].map(([id,q])=>{ const p=PRODUCTS.find(x=>x.id===id); return `• ${p.brandLabel} ${p.name} ×${q} — ${PKR(p.price*q)}`; });
+  const msg = encodeURIComponent(`Hi Vape Jam! I'd like to order (Cash on Delivery, Karachi):\n${lines.join('\n')}\n\nSubtotal: ${PKR(total)}`);
+  document.getElementById('cartCheckout').href = `https://wa.me/${WA}?text=${msg}`;
+  lucide.createIcons();
+}
+
+document.addEventListener('click', e=>{
+  const add = e.target.closest('[data-add]');
+  if(add){
+    const id = add.dataset.add;
+    cart.set(id, (cart.get(id)||0)+1);
+    renderCart();
+    const p = PRODUCTS.find(x=>x.id===id);
+    toast(`${p.name} added to cart`, 'shopping-bag');
+    const cc = document.getElementById('cartCount');
+    cc.classList.remove('bump'); void cc.offsetWidth; cc.classList.add('bump');
+    return;
+  }
+  const inc = e.target.closest('[data-cart-inc]'); if(inc){ cart.set(inc.dataset.cartInc, cart.get(inc.dataset.cartInc)+1); renderCart(); return; }
+  const dec = e.target.closest('[data-cart-dec]');
+  if(dec){ const id=dec.dataset.cartDec, q=cart.get(id)-1; q<=0?cart.delete(id):cart.set(id,q); renderCart(); return; }
+  const rem = e.target.closest('[data-cart-rem]'); if(rem){ cart.delete(rem.dataset.cartRem); renderCart(); return; }
+});
+
+/* ------------------------------------------------------------------
+   5. WISHLIST
+------------------------------------------------------------------ */
+const wish = new Set();
+function syncWishUI(){
+  const wc = document.getElementById('wishCount');
+  wc.textContent = wish.size;
+  wc.classList.toggle('hidden', wish.size===0);
+  wc.classList.toggle('grid', wish.size>0);
+  document.querySelectorAll('[data-wish]').forEach(b=>{
+    const on = wish.has(b.dataset.wish);
+    b.classList.toggle('text-ember', on); b.classList.toggle('border-ember', on);
+    b.querySelector('svg')?.setAttribute('fill', on ? '#F58220' : 'none');
+  });
+}
+document.addEventListener('click', e=>{
+  const w = e.target.closest('[data-wish]'); if(!w) return;
+  const id = w.dataset.wish, p = PRODUCTS.find(x=>x.id===id);
+  if(wish.has(id)){ wish.delete(id); toast(`${p.name} saved to wishlist`, 'heart'); }
+  else { wish.add(id); toast(`${p.name} added to wishlist`, 'heart'); }
+  syncWishUI();
+});
+
+/* ------------------------------------------------------------------
+   6. TOASTS
+------------------------------------------------------------------ */
+function toast(msg, icon){
+  const t = document.createElement('div');
+  t.className = 'toast flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 shadow-xl';
+  t.innerHTML = `<i data-lucide="${icon||'circle-check-big'}" class="h-4 w-4 shrink-0 text-ember"></i><span class="font-medium">${msg}</span>`;
+  document.getElementById('toasts').appendChild(t);
+  lucide.createIcons();
+  setTimeout(()=>{ t.style.transition='all .4s ease'; t.style.opacity='0'; t.style.transform='translateY(10px)'; setTimeout(()=>t.remove(), 400); }, 2500);
+}
+
+/* ------------------------------------------------------------------
+   7. AGE GATE & MENU
+------------------------------------------------------------------ */
+document.getElementById('ageEnter').addEventListener('click', ()=>{
+  sessionStorage.setItem('vj21','1');
+  const gate = document.getElementById('ageGate');
+  gate.style.opacity='0'; setTimeout(()=>{ gate.style.display='none'; }, 500);
+  document.body.classList.remove('overflow-hidden');
+});
+
+const header = document.getElementById('siteHeader');
+addEventListener('scroll', ()=>{
+  const on = scrollY > 12;
+  header.classList.toggle('shadow-md', on);
+}, {passive:true});
+
+document.getElementById('menuBtn').addEventListener('click', ()=>{
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('hidden');
+  m.querySelectorAll('.mnav').forEach(a=>a.addEventListener('click', ()=>m.classList.add('hidden')));
+});
+
+/* Scroll reveals */
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* ------------------------------------------------------------------
+   8. NEWSLETTER
+------------------------------------------------------------------ */
+document.getElementById('newsForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const em = document.getElementById('newsEmail').value.trim();
+  const msg = document.getElementById('newsMsg');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){ msg.textContent='Please enter a valid email address.'; msg.className='mt-3 text-xs font-medium text-rust'; return; }
+  msg.innerHTML = 'Voucher unlocked — use code <span class="font-mono font-bold text-white">VJKHI10</span> at checkout.';
+  msg.className='mt-3 text-xs font-medium text-amber-300';
+  e.target.reset();
+  toast('10% voucher VJKHI10 unlocked', 'sparkles');
+});
+
+/* ------------------------------------------------------------------
+   9. HERO SMOKE CANVAS (Tuned for light modern backdrop)
+------------------------------------------------------------------ */
+(function(){
+  const cv = document.getElementById('heroCanvas'); if(!cv) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = cv.getContext('2d');
+  let W, H, parts = [];
+  function sprite(color){
+    const s = document.createElement('canvas'); s.width = s.height = 128;
+    const c = s.getContext('2d');
+    const g = c.createRadialGradient(64,64,0,64,64,64);
+    g.addColorStop(0, color + '55'); g.addColorStop(.4, color + '22'); g.addColorStop(1, color + '00');
+    c.fillStyle = g; c.fillRect(0,0,128,128);
+    return s;
+  }
+  const spAmber = sprite('#F58220'), spRust = sprite('#D9531E');
+  function resize(){ W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight; }
+  addEventListener('resize', resize); resize();
+  const N = innerWidth < 768 ? 18 : 32;
+  function spawn(p){
+    p = p || {};
+    p.x = Math.random()*W;
+    p.y = H + 60 + Math.random()*120;
+    p.r = 40 + Math.random()*80;
+    p.vy = .25 + Math.random()*.5;
+    p.vx = (Math.random()-.5)*.25;
+    p.life = 0; p.max = 300 + Math.random()*240;
+    p.ember = Math.random() < .5;
+    p.scale = .6 + Math.random()*1.2;
+    return p;
+  }
+  for(let i=0;i<N;i++){ const p = spawn(); p.y = Math.random()*H; p.life = Math.random()*p.max; parts.push(p); }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    ctx.globalCompositeOperation = 'source-over';
+    parts.forEach((p,i)=>{
+      p.life++; p.y -= p.vy; p.x += p.vx + Math.sin((p.life + i*40)/90)*.2;
+      const t = p.life / p.max;
+      const alpha = (t < .2 ? t/.2 : 1 - (t-.2)/.8) * .06;
+      const r = p.r * (0.8 + t*1.2) * p.scale;
+      ctx.globalAlpha = Math.max(0, alpha);
+      ctx.drawImage(p.ember ? spAmber : spRust, p.x - r, p.y - r, r*2, r*2);
+      if(p.life > p.max || p.y < -r*2) parts[i] = spawn();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* ------------------------------------------------------------------
+   10. BOOT
+------------------------------------------------------------------ */
+applyFilters();
+renderCart();
+</script>
+</body>
+</html>
