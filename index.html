@@ -131,10 +131,10 @@
   <div class="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-[0_30px_90px_-20px_rgba(0,0,0,.4)] relative overflow-hidden">
     <div class="absolute -top-24 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-ember/15 blur-3xl" aria-hidden="true"></div>
     <div class="relative">
-      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-black p-2 shadow-lg">
-        <img src="logo.png" alt="Vape Jam Logo" class="h-full w-full object-contain" />
+      <div class="mx-auto mb-5 flex h-20 w-auto items-center justify-center">
+        <img src="logo.png" alt="Vape Jam Logo" class="h-full w-auto object-contain drop-shadow-md" />
       </div>
-      <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-mute">Age Verification Required</p>
+      <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-mute font-semibold">Age Verification Required</p>
       <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink">Are you 21 or older?</h2>
       <p class="mt-3 text-sm leading-relaxed text-mute">Vape Jam Karachi sells nicotine products strictly to adults 21+. Please confirm your age to enter.</p>
       <div class="mt-7 flex flex-col gap-3">
@@ -179,18 +179,12 @@
 <!-- ============================================================
      SHOPIFY SECTION → sections/header.liquid
 ============================================================ -->
-<header id="siteHeader" class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-all duration-300">
-  <div class="wrap flex h-[74px] items-center justify-between gap-4">
+<header id="siteHeader" class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl transition-all duration-300">
+  <div class="wrap flex h-[78px] items-center justify-between gap-4">
 
-    <!-- Brand with Official Logo -->
-    <a href="#top" class="flex items-center gap-3 group">
-      <div class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-black p-1.5 shadow-sm transition-transform group-hover:scale-105">
-        <img src="logo.png" alt="Vape Jam Logo" class="h-full w-full object-contain" />
-      </div>
-      <span class="leading-none">
-        <span class="font-display text-2xl font-extrabold tracking-tight text-ink">VAPE<span class="text-ember">JAM</span></span>
-        <span class="mt-0.5 block font-mono text-[8.5px] uppercase tracking-[0.38em] text-mute font-semibold">Karachi · Pakistan</span>
-      </span>
+    <!-- Brand with Official Transparent Logo (No text, bigger size) -->
+    <a href="#top" class="flex items-center group py-1" aria-label="Vape Jam Home">
+      <img src="logo.png" alt="Vape Jam" class="h-12 md:h-14 lg:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
     </a>
 
     <!-- Center nav -->
@@ -318,7 +312,7 @@
 <section id="shop" class="relative scroll-mt-28 pb-24">
   <div class="wrap">
 
-    <!-- ===== QUICK VAPE & E-LIQUID FINDER (Light Interactive Widget) ===== -->
+    <!-- ===== QUICK VAPE & E-LIQUID FINDER ===== -->
     <div class="rv relative z-20 -mt-20 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_25px_60px_-20px_rgba(0,0,0,.09)] md:-mt-24 md:p-8">
       <div class="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-center">
         <div class="flex items-center gap-3.5">
@@ -422,7 +416,7 @@
       </div>
     </div>
 
-    <!-- ===== FEATURED / FILTERED GRID (Seamless with White Product Backgrounds) ===== -->
+    <!-- ===== FEATURED / FILTERED GRID ===== -->
     <div class="mt-16 md:mt-20">
       <div class="rv mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
@@ -483,7 +477,7 @@
 </section>
 
 <!-- ============================================================
-     SHOPIFY SECTION → sections/our-outlets.liquid
+     SHOPIFY SECTION → sections/our-outlets.liquid (Smooth Card Hover Animations)
 ============================================================ -->
 <section id="outlets" class="scroll-mt-28 py-24 bg-slate-50/70">
   <div class="wrap">
@@ -499,59 +493,59 @@
 
     <div class="grid gap-6 md:grid-cols-3">
       <!-- Branch 1 — Bahadurabad (Main) -->
-      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_20px_45px_-15px_rgba(245,130,32,.2)]">
-        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-100/70 blur-2xl transition-opacity group-hover:bg-orange-200/80" aria-hidden="true"></div>
+      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]">
+        <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-orange-100/60 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-orange-200/80" aria-hidden="true"></div>
         <div class="mb-5 flex items-start justify-between">
-          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember"><i data-lucide="store" class="h-6 w-6"></i></span>
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-ember group-hover:to-rust group-hover:text-white group-hover:shadow-md"><i data-lucide="store" class="h-6 w-6"></i></span>
           <span class="rounded-full bg-gradient-to-r from-ember to-rust px-3 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-white shadow-sm">Main Outlet</span>
         </div>
-        <h3 class="font-display text-xl font-bold text-ink">Bahadurabad Branch</h3>
+        <h3 class="font-display text-xl font-bold text-ink transition-colors group-hover:text-ember">Bahadurabad Branch</h3>
         <p class="mt-2 text-sm leading-relaxed text-mute">Shop 4, Al-Mehran Square, Bahadurabad Chowrangi, Karachi.</p>
         <div class="mt-5 space-y-2.5 border-t border-slate-100 pt-5 text-sm">
           <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="clock" class="h-4 w-4 text-ember"></i>12 PM – 12 AM · 7 Days Open</p>
           <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="phone" class="h-4 w-4 text-ember"></i>0336-2396603</p>
         </div>
         <div class="mt-6 flex gap-2.5">
-          <a href="https://www.google.com/maps/search/?api=1&query=Bahadurabad+Chowrangi+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
-          <a href="tel:+923362396603" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember" aria-label="Call Bahadurabad branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bahadurabad+Chowrangi+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-gradient-to-r hover:from-ember hover:to-rust hover:text-white shadow-sm"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
+          <a href="tel:+923362396603" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember shadow-sm" aria-label="Call Bahadurabad branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
         </div>
       </article>
 
       <!-- Branch 2 — DHA / Clifton -->
-      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_20px_45px_-15px_rgba(245,130,32,.2)]" style="transition-delay:.1s">
-        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-100/70 blur-2xl transition-opacity group-hover:bg-orange-200/80" aria-hidden="true"></div>
+      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]" style="transition-delay:.1s">
+        <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-orange-100/60 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-orange-200/80" aria-hidden="true"></div>
         <div class="mb-5 flex items-start justify-between">
-          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember"><i data-lucide="store" class="h-6 w-6"></i></span>
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-ember group-hover:to-rust group-hover:text-white group-hover:shadow-md"><i data-lucide="store" class="h-6 w-6"></i></span>
           <span class="rounded-full bg-slate-100 px-3 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-slate-700">DHA Phase 6</span>
         </div>
-        <h3 class="font-display text-xl font-bold text-ink">DHA / Clifton Branch</h3>
+        <h3 class="font-display text-xl font-bold text-ink transition-colors group-hover:text-ember">DHA / Clifton Branch</h3>
         <p class="mt-2 text-sm leading-relaxed text-mute">35-C, Bukhari Commercial Lane 8, Phase 6, DHA, Karachi.</p>
         <div class="mt-5 space-y-2.5 border-t border-slate-100 pt-5 text-sm">
           <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="clock" class="h-4 w-4 text-ember"></i>1 PM – 1 AM · 7 Days Open</p>
           <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="phone" class="h-4 w-4 text-ember"></i>0301-2396604</p>
         </div>
         <div class="mt-6 flex gap-2.5">
-          <a href="https://www.google.com/maps/search/?api=1&query=Bukhari+Commercial+Area+DHA+Phase+6+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
-          <a href="tel:+923012396604" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember" aria-label="Call DHA branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bukhari+Commercial+Area+DHA+Phase+6+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-gradient-to-r hover:from-ember hover:to-rust hover:text-white shadow-sm"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
+          <a href="tel:+923012396604" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember shadow-sm" aria-label="Call DHA branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
         </div>
       </article>
 
       <!-- Branch 3 — Gulshan -->
-      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_20px_45px_-15px_rgba(245,130,32,.2)]" style="transition-delay:.2s">
-        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-100/70 blur-2xl transition-opacity group-hover:bg-orange-200/80" aria-hidden="true"></div>
+      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]" style="transition-delay:.2s">
+        <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-orange-100/60 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-orange-200/80" aria-hidden="true"></div>
         <div class="mb-5 flex items-start justify-between">
-          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember"><i data-lucide="store" class="h-6 w-6"></i></span>
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-ember group-hover:to-rust group-hover:text-white group-hover:shadow-md"><i data-lucide="store" class="h-6 w-6"></i></span>
           <span class="rounded-full bg-slate-100 px-3 py-1 font-mono text-[9.5px] font-bold uppercase tracking-widest text-slate-700">Gulshan</span>
         </div>
-        <h3 class="font-display text-xl font-bold text-ink">Gulshan-e-Iqbal Branch</h3>
+        <h3 class="font-display text-xl font-bold text-ink transition-colors group-hover:text-ember">Gulshan-e-Iqbal Branch</h3>
         <p class="mt-2 text-sm leading-relaxed text-mute">Shop 12, Main Rashid Minhas Rd, near Millennium Mall, Gulshan.</p>
         <div class="mt-5 space-y-2.5 border-t border-slate-100 pt-5 text-sm">
           <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="clock" class="h-4 w-4 text-ember"></i>12 PM – 11 PM · 7 Days Open</p>
           <p class="flex items-center gap-2.5 text-slate-700 font-medium"><i data-lucide="phone" class="h-4 w-4 text-ember"></i>0302-2396605</p>
         </div>
         <div class="mt-6 flex gap-2.5">
-          <a href="https://www.google.com/maps/search/?api=1&query=Rashid+Minhas+Road+Gulshan+e+Iqbal+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
-          <a href="tel:+923022396605" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember" aria-label="Call Gulshan branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rashid+Minhas+Road+Gulshan+e+Iqbal+Karachi" target="_blank" rel="noopener" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:border-ember hover:bg-gradient-to-r hover:from-ember hover:to-rust hover:text-white shadow-sm"><i data-lucide="navigation" class="h-4 w-4"></i>Directions</a>
+          <a href="tel:+923022396605" class="flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-800 transition-all hover:border-ember hover:bg-orange-50 hover:text-ember shadow-sm" aria-label="Call Gulshan branch"><i data-lucide="phone-call" class="h-4 w-4"></i></a>
         </div>
       </article>
     </div>
@@ -619,18 +613,15 @@
 </main>
 
 <!-- ============================================================
-     SHOPIFY SECTION → sections/footer.liquid
+     SHOPIFY SECTION → sections/footer.liquid (Clean Logo, No redundant text)
 ============================================================ -->
 <footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
   <div class="wrap grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
 
     <!-- Col 1: Brand & Logo -->
     <div>
-      <a href="#top" class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-black p-1">
-          <img src="logo.png" alt="Vape Jam Logo" class="h-full w-full object-contain" />
-        </div>
-        <span class="font-display text-xl font-bold tracking-tight text-white">VAPE<span class="text-ember">JAM</span></span>
+      <a href="#top" class="inline-block group py-1" aria-label="Vape Jam Home">
+        <img src="logo.png" alt="Vape Jam Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md" />
       </a>
       <p class="mt-4 text-sm leading-relaxed text-slate-400">Born in Karachi, built for vapers. Vape Jam curates only verified, original international hardware &amp; e-liquids — zero clones, zero compromises.</p>
       <div class="mt-5 space-y-2.5 text-sm">
@@ -1149,7 +1140,7 @@ document.getElementById('newsForm').addEventListener('submit', e=>{
 });
 
 /* ------------------------------------------------------------------
-   9. HERO SMOKE CANVAS (Tuned for light modern backdrop)
+   9. HERO SMOKE CANVAS
 ------------------------------------------------------------------ */
 (function(){
   const cv = document.getElementById('heroCanvas'); if(!cv) return;
