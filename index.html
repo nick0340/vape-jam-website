@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Vape Jam — Karachi's Premier Vape Store | Pods, Mods & E-Liquids</title>
 <meta name="description" content="Vape Jam Karachi — 100% authentic vape devices, pod systems & premium e-liquids. 3 outlets (Bahadurabad, DHA, Gulshan) + same-day city-wide delivery." />
-<link rel="icon" type="image/png" href="logo.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="favicon.png" />
 
 <!-- ============ FONTS ============ -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -88,6 +90,18 @@
   @keyframes cardIn{ from{ opacity:0; transform:translateY(16px) scale(.985); filter:blur(3px);} to{ opacity:1; transform:none; filter:blur(0);} }
   .prod{ animation:cardIn .45s cubic-bezier(.22,1,.36,1) both; }
 
+  /* Smooth Outlets Card Hover (hardware accelerated, 100% zero-jerk) */
+  .outlet-card {
+    will-change: transform, box-shadow, border-color;
+    transform: translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+  }
+  .outlet-card:hover {
+    transform: translateY(-6px) translateZ(0);
+    border-color: #F58220;
+    box-shadow: 0 22px 45px -12px rgba(245, 130, 32, 0.22);
+  }
+
   /* Brand marquee */
   @keyframes mq{ to{ transform:translateX(-50%);} }
   .mq-track{ display:flex; width:max-content; animation:mq 30s linear infinite; }
@@ -132,7 +146,7 @@
     <div class="absolute -top-24 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-ember/15 blur-3xl" aria-hidden="true"></div>
     <div class="relative">
       <div class="mx-auto mb-5 flex h-20 w-auto items-center justify-center">
-        <img src="logo.png" alt="Vape Jam Logo" class="h-full w-auto object-contain drop-shadow-md" />
+        <img src="without-bg.png" alt="Vape Jam Logo" class="h-full w-auto object-contain drop-shadow-md" />
       </div>
       <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-mute font-semibold">Age Verification Required</p>
       <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink">Are you 21 or older?</h2>
@@ -182,9 +196,9 @@
 <header id="siteHeader" class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl transition-all duration-300">
   <div class="wrap flex h-[78px] items-center justify-between gap-4">
 
-    <!-- Brand with Official Transparent Logo (No text, bigger size) -->
+    <!-- Brand with Official Transparent Logo (without-bg.png) -->
     <a href="#top" class="flex items-center group py-1" aria-label="Vape Jam Home">
-      <img src="logo.png" alt="Vape Jam" class="h-12 md:h-14 lg:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
+      <img src="without-bg.png" alt="Vape Jam" class="h-12 md:h-14 lg:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
     </a>
 
     <!-- Center nav -->
@@ -477,7 +491,7 @@
 </section>
 
 <!-- ============================================================
-     SHOPIFY SECTION → sections/our-outlets.liquid (Smooth Card Hover Animations)
+     SHOPIFY SECTION → sections/our-outlets.liquid (Silky Smooth Card Hover)
 ============================================================ -->
 <section id="outlets" class="scroll-mt-28 py-24 bg-slate-50/70">
   <div class="wrap">
@@ -491,9 +505,10 @@
       </a>
     </div>
 
-    <div class="grid gap-6 md:grid-cols-3">
+    <!-- Grid container with single scroll reveal -->
+    <div class="rv grid gap-6 md:grid-cols-3">
       <!-- Branch 1 — Bahadurabad (Main) -->
-      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]">
+      <article class="outlet-card group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
         <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-orange-100/60 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-orange-200/80" aria-hidden="true"></div>
         <div class="mb-5 flex items-start justify-between">
           <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-ember group-hover:to-rust group-hover:text-white group-hover:shadow-md"><i data-lucide="store" class="h-6 w-6"></i></span>
@@ -512,7 +527,7 @@
       </article>
 
       <!-- Branch 2 — DHA / Clifton -->
-      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]" style="transition-delay:.1s">
+      <article class="outlet-card group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
         <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-orange-100/60 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-orange-200/80" aria-hidden="true"></div>
         <div class="mb-5 flex items-start justify-between">
           <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-ember group-hover:to-rust group-hover:text-white group-hover:shadow-md"><i data-lucide="store" class="h-6 w-6"></i></span>
@@ -531,7 +546,7 @@
       </article>
 
       <!-- Branch 3 — Gulshan -->
-      <article class="rv group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]" style="transition-delay:.2s">
+      <article class="outlet-card group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
         <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-orange-100/60 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:bg-orange-200/80" aria-hidden="true"></div>
         <div class="mb-5 flex items-start justify-between">
           <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-100 text-ember transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-ember group-hover:to-rust group-hover:text-white group-hover:shadow-md"><i data-lucide="store" class="h-6 w-6"></i></span>
@@ -613,7 +628,7 @@
 </main>
 
 <!-- ============================================================
-     SHOPIFY SECTION → sections/footer.liquid (Clean Logo, No redundant text)
+     SHOPIFY SECTION → sections/footer.liquid
 ============================================================ -->
 <footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
   <div class="wrap grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
@@ -621,7 +636,7 @@
     <!-- Col 1: Brand & Logo -->
     <div>
       <a href="#top" class="inline-block group py-1" aria-label="Vape Jam Home">
-        <img src="logo.png" alt="Vape Jam Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md" />
+        <img src="without-bg.png" alt="Vape Jam Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md" />
       </a>
       <p class="mt-4 text-sm leading-relaxed text-slate-400">Born in Karachi, built for vapers. Vape Jam curates only verified, original international hardware &amp; e-liquids — zero clones, zero compromises.</p>
       <div class="mt-5 space-y-2.5 text-sm">
@@ -766,7 +781,7 @@ const PRODUCTS = [
 ];
 
 /* ------------------------------------------------------------------
-   2. CLEAN PRODUCT ART (Engineered for White Product Backgrounds)
+   2. CLEAN PRODUCT ART
 ------------------------------------------------------------------ */
 function art(p, tag){
   const a = p.accent, id = p.id + (tag||'');
