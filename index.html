@@ -72,10 +72,11 @@
     box-shadow:0 0 0 1px #F58220 inset, 0 4px 16px -2px rgba(245,130,32,.25); }
   .pill .pill-ic{ width:.95rem; height:.95rem; }
 
-  /* Tab buttons */
-  .tabbtn{ display:inline-flex; align-items:center; gap:.5rem; padding:.65rem 1.25rem; border-radius:999px; font-size:.84rem; font-weight:600;
-    color:#64748B; border:1px solid transparent; cursor:pointer; transition:all .3s ease; }
-  .tabbtn.active{ color:#FFFFFF; background:linear-gradient(96deg,#F58220,#D9531E); box-shadow:0 8px 24px -6px rgba(245,130,32,.5); }
+  /* Tab buttons Segmented Control */
+  .tabbtn{ display:inline-flex; align-items:center; justify-content:center; gap:.4rem; padding:.5rem 1rem; border-radius:9999px; font-size:.82rem; font-weight:600;
+    color:#64748B; border:none; cursor:pointer; transition:all .25s cubic-bezier(.22,1,.36,1); white-space:nowrap; line-height:1.2; }
+  @media(min-width:640px){ .tabbtn{ font-size:.86rem; gap:.5rem; padding:.6rem 1.3rem; } }
+  .tabbtn.active{ color:#FFFFFF; background:linear-gradient(96deg,#F58220,#D9531E); box-shadow:0 2px 10px rgba(245,130,32,.35); }
 
   /* Nav link underline sweep */
   .navlink{ position:relative; color:#334155; font-size:.86rem; font-weight:500; transition:color .25s; padding-block:.25rem; }
@@ -337,12 +338,12 @@
           </div>
         </div>
         <!-- Tabs (Perfect matching round-full capsule on both outer container and inner tabs) -->
-        <div class="inline-flex w-full sm:w-auto rounded-full border border-slate-200/90 bg-slate-100 p-1 sm:p-1.5 shadow-inner" role="tablist" aria-label="Finder mode">
-          <button id="tabDevices" class="tabbtn active flex-1 sm:flex-initial justify-center text-center py-2 px-3 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap rounded-full" role="tab" aria-selected="true">
+        <div class="inline-flex w-full sm:w-auto items-center rounded-full border border-slate-200/90 bg-slate-100 p-1 sm:p-1.5 shadow-inner overflow-hidden" role="tablist" aria-label="Finder mode">
+          <button id="tabDevices" class="tabbtn active flex-1 sm:flex-initial" role="tab" aria-selected="true">
             <i data-lucide="cpu" class="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"></i>
             <span>Devices &amp; Pods</span>
           </button>
-          <button id="tabLiquids" class="tabbtn flex-1 sm:flex-initial justify-center text-center py-2 px-3 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap rounded-full" role="tab" aria-selected="false">
+          <button id="tabLiquids" class="tabbtn flex-1 sm:flex-initial" role="tab" aria-selected="false">
             <i data-lucide="droplets" class="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"></i>
             <span>E-Liquids</span>
           </button>
