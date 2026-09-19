@@ -194,15 +194,15 @@
      SHOPIFY SECTION → sections/header.liquid
 ============================================================ -->
 <header id="siteHeader" class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl transition-all duration-300">
-  <div class="wrap flex h-[74px] items-center justify-between gap-4">
+  <div class="wrap flex h-[74px] items-center justify-between gap-2 lg:gap-4">
 
     <!-- Brand with Official Transparent Logo (without-bg.png) -->
-    <a href="#top" class="flex items-center group py-2" aria-label="Vape Jam Home">
+    <a href="#top" class="flex shrink-0 items-center group py-2" aria-label="Vape Jam Home">
       <img src="without-bg.png" alt="Vape Jam" class="h-9 md:h-10 lg:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
     </a>
 
-    <!-- Center nav -->
-    <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
+    <!-- Center nav (Fits perfectly without wrapping on 1024px laptops) -->
+    <nav class="hidden items-center lg:gap-3 xl:gap-6 2xl:gap-8 lg:flex shrink-0 whitespace-nowrap text-[12.5px] xl:text-sm font-medium" aria-label="Primary">
       <a href="#shop" class="navlink" data-goto-filter="d:pod">Pod Systems</a>
       <a href="#shop" class="navlink" data-goto-filter="l:all">E-Liquids &amp; Salt Nic</a>
       <a href="#shop" class="navlink" data-goto-filter="d:disposable">Disposables</a>
@@ -212,27 +212,27 @@
     </nav>
 
     <!-- Right actions -->
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <!-- Quick search -->
       <label class="relative hidden md:block">
-        <i data-lucide="search" class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-mute"></i>
-        <input id="searchInput" type="search" placeholder="Search devices, juices..." autocomplete="off"
-          class="search-input w-44 rounded-full border border-line bg-slate-50 py-2 pl-10 pr-4 text-sm text-ink placeholder-slate-400 outline-none transition-all duration-300 focus:border-ember focus:bg-white focus:w-64 focus:shadow-[0_0_20px_-6px_rgba(245,130,32,.35)]" />
+        <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-mute"></i>
+        <input id="searchInput" type="search" placeholder="Search..." autocomplete="off"
+          class="search-input w-28 lg:w-32 xl:w-44 rounded-full border border-line bg-slate-50 py-1.5 pl-8 pr-3 text-xs lg:text-sm text-ink placeholder-slate-400 outline-none transition-all duration-300 focus:border-ember focus:bg-white focus:w-44 xl:focus:w-56 focus:shadow-[0_0_20px_-6px_rgba(245,130,32,.35)]" />
       </label>
       <!-- Wishlist -->
-      <button id="wishBtn" class="relative grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-slate-600 shadow-sm transition-all hover:border-ember hover:text-ember" aria-label="Wishlist">
-        <i data-lucide="heart" class="h-4.5 w-4.5"></i>
-        <span id="wishCount" class="absolute -right-1 -top-1 hidden h-4.5 min-w-4.5 place-items-center rounded-full bg-ember px-1 font-mono text-[10px] font-bold text-white shadow-sm">0</span>
+      <button id="wishBtn" class="relative grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full border border-line bg-white text-slate-600 shadow-sm transition-all hover:border-ember hover:text-ember" aria-label="Wishlist">
+        <i data-lucide="heart" class="h-4 w-4 sm:h-4.5 sm:w-4.5"></i>
+        <span id="wishCount" class="absolute -right-1 -top-1 hidden h-4 min-w-4 place-items-center rounded-full bg-ember px-1 font-mono text-[9px] font-bold text-white shadow-sm">0</span>
       </button>
       <!-- Cart trigger -->
-      <button id="cartBtn" class="relative flex h-10 items-center gap-2 rounded-full border border-line bg-white px-4 text-sm font-semibold text-slate-800 shadow-sm transition-all hover:border-ember hover:shadow-[0_0_20px_-6px_rgba(245,130,32,.3)]" aria-label="Open cart">
-        <i data-lucide="shopping-bag" class="h-4.5 w-4.5 text-ember"></i>
+      <button id="cartBtn" class="relative flex h-9 sm:h-10 items-center gap-1.5 sm:gap-2 rounded-full border border-line bg-white px-3 sm:px-4 text-xs sm:text-sm font-semibold text-slate-800 shadow-sm transition-all hover:border-ember hover:shadow-[0_0_20px_-6px_rgba(245,130,32,.3)]" aria-label="Open cart">
+        <i data-lucide="shopping-bag" class="h-4 w-4 sm:h-4.5 sm:w-4.5 text-ember"></i>
         <span class="hidden sm:inline">Cart</span>
-        <span id="cartCount" class="grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-r from-ember to-rust px-1.5 font-mono text-[10px] font-bold text-white">0</span>
+        <span id="cartCount" class="grid h-4.5 min-w-4.5 sm:h-5 sm:min-w-5 place-items-center rounded-full bg-gradient-to-r from-ember to-rust px-1 font-mono text-[9px] sm:text-[10px] font-bold text-white">0</span>
       </button>
       <!-- Mobile menu -->
-      <button id="menuBtn" class="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-slate-700 shadow-sm lg:hidden" aria-label="Menu">
-        <i data-lucide="menu" class="h-5 w-5"></i>
+      <button id="menuBtn" class="grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full border border-line bg-white text-slate-700 shadow-sm lg:hidden" aria-label="Menu">
+        <i data-lucide="menu" class="h-4.5 w-4.5 sm:h-5 sm:w-5"></i>
       </button>
     </div>
   </div>
@@ -260,7 +260,7 @@
 <!-- ============================================================
      SHOPIFY SECTION → sections/hero.liquid
 ============================================================ -->
-<section class="relative overflow-hidden pb-28 pt-12 md:pb-36 md:pt-20 bg-gradient-to-b from-orange-50/40 via-white to-page">
+<section class="relative overflow-hidden pb-24 pt-10 md:pb-36 md:pt-20 bg-gradient-to-b from-orange-50/40 via-white to-page">
   <!-- Ambient layers -->
   <canvas id="heroCanvas" class="absolute inset-0 h-full w-full" aria-hidden="true"></canvas>
   <div class="gridbg absolute inset-0" aria-hidden="true"></div>
@@ -272,48 +272,48 @@
   <div class="wrap relative">
     <div class="mx-auto max-w-4xl text-center">
       <!-- Location badge -->
-      <div class="rv mx-auto inline-flex items-center gap-2.5 rounded-full border border-orange-200/80 bg-white/90 py-1.5 pl-2.5 pr-4 shadow-sm backdrop-blur">
-        <span class="relative flex h-2.5 w-2.5">
+      <div class="rv mx-auto inline-flex items-center gap-2 rounded-full border border-orange-200/80 bg-white/90 py-1 pl-2 pr-3.5 shadow-sm backdrop-blur sm:py-1.5 sm:pl-2.5 sm:pr-4">
+        <span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
           <span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-ember"></span>
-          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-ember"></span>
+          <span class="relative inline-flex h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-ember"></span>
         </span>
-        <span class="font-mono text-[11px] uppercase tracking-[0.2em] font-semibold text-slate-700">Serving Karachi — Bahadurabad · DHA · Gulshan</span>
+        <span class="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.2em] font-semibold text-slate-700">Serving Karachi — Bahadurabad · DHA · Gulshan</span>
       </div>
 
-      <!-- Headline -->
-      <h1 class="rv mt-7 font-display text-[2.6rem] font-bold leading-[1.08] tracking-tight text-ink sm:text-6xl lg:text-[4.3rem]" style="transition-delay:.08s; font-weight:700;">
-        Shop Run by Professionals with a Passion to Help You <span class="grad-ember">Quit Smoking.</span>
+      <!-- Short, Punchy, Extra Bold Headline -->
+      <h1 class="rv mt-5 sm:mt-7 font-display text-[2.2rem] sm:text-5xl lg:text-[4rem] font-extrabold leading-[1.1] tracking-tight text-ink" style="transition-delay:.08s; font-weight:800;">
+        Professionals Helping You <span class="grad-ember">Quit Smoking.</span>
       </h1>
 
-      <p class="rv mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 font-medium md:text-lg" style="transition-delay:.16s">
-        Backed by years of experience and tonnes of authentic devices, pod systems &amp; premium e-liquids. Get guided advice, customized nicotine strengths, and 100% genuine products across 3 Karachi outlets.
+      <p class="rv mx-auto mt-3.5 sm:mt-5 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-slate-600 font-medium" style="transition-delay:.16s">
+        Backed by years of experience and tonnes of authentic devices, pod systems &amp; premium e-liquids across 3 Karachi outlets.
       </p>
 
-      <!-- Dual CTA -->
-      <div class="rv mt-9 flex flex-col items-center justify-center gap-3.5 sm:flex-row" style="transition-delay:.24s">
-        <a href="#shop" class="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-ember to-rust px-8 py-4 font-display text-base font-semibold text-white shadow-[0_10px_35px_-8px_rgba(245,130,32,.55)] transition-all duration-300 hover:shadow-[0_14px_45px_-6px_rgba(245,130,32,.75)] hover:brightness-105 active:scale-95 sm:w-auto">
-          <i data-lucide="flame" class="h-4.5 w-4.5 transition-transform group-hover:scale-110"></i>
+      <!-- Dual CTA (Compact & sleek on mobile) -->
+      <div class="rv mt-7 sm:mt-9 flex flex-col items-center justify-center gap-2.5 sm:gap-3.5 sm:flex-row" style="transition-delay:.24s">
+        <a href="#shop" class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-ember to-rust px-5 py-3 sm:px-8 sm:py-4 font-display text-[13.5px] sm:text-base font-semibold text-white shadow-[0_8px_25px_-6px_rgba(245,130,32,.55)] transition-all duration-300 hover:shadow-[0_14px_45px_-6px_rgba(245,130,32,.75)] hover:brightness-105 active:scale-95 sm:w-auto">
+          <i data-lucide="flame" class="h-4 w-4 sm:h-4.5 sm:w-4.5 transition-transform group-hover:scale-110"></i>
           Shop Best Sellers
         </a>
-        <a href="#outlets" class="group inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-slate-300 bg-white px-8 py-4 font-display text-base font-semibold text-slate-800 shadow-sm transition-all duration-300 hover:border-ember hover:text-ember hover:shadow-[0_8px_30px_-10px_rgba(245,130,32,.25)] active:scale-95 sm:w-auto">
-          <i data-lucide="map-pin" class="h-4.5 w-4.5 text-ember"></i>
+        <a href="#outlets" class="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 sm:px-8 sm:py-4 font-display text-[13.5px] sm:text-base font-semibold text-slate-800 shadow-sm transition-all duration-300 hover:border-ember hover:text-ember hover:shadow-[0_8px_30px_-10px_rgba(245,130,32,.25)] active:scale-95 sm:w-auto">
+          <i data-lucide="map-pin" class="h-4 w-4 sm:h-4.5 sm:w-4.5 text-ember"></i>
           Find An Outlet Near You
         </a>
       </div>
 
       <!-- Trust indicators -->
-      <div class="rv mx-auto mt-14 grid max-w-3xl grid-cols-1 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white/95 shadow-md backdrop-blur sm:grid-cols-3 sm:divide-x sm:divide-y-0" style="transition-delay:.34s">
-        <div class="flex items-center gap-3.5 p-4.5 text-left">
-          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="truck" class="h-5 w-5"></i></span>
-          <span><span class="block text-[13px] font-bold text-ink">Same-Day Delivery</span><span class="block font-mono text-[10px] uppercase tracking-wider text-mute">Karachi wide before 8 PM</span></span>
+      <div class="rv mx-auto mt-10 sm:mt-14 grid max-w-3xl grid-cols-1 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white/95 shadow-md backdrop-blur sm:grid-cols-3 sm:divide-x sm:divide-y-0" style="transition-delay:.34s">
+        <div class="flex items-center gap-3.5 p-3.5 sm:p-4.5 text-left">
+          <span class="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="truck" class="h-4.5 w-4.5 sm:h-5 sm:w-5"></i></span>
+          <span><span class="block text-[12.5px] sm:text-[13px] font-bold text-ink">Same-Day Delivery</span><span class="block font-mono text-[9.5px] sm:text-[10px] uppercase tracking-wider text-mute">Karachi wide before 8 PM</span></span>
+        </div>
+        <div class="flex items-center gap-3.5 p-3.5 sm:p-4.5 text-left">
+          <span class="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="banknote" class="h-4.5 w-4.5 sm:h-5 sm:w-5"></i></span>
+          <span><span class="block text-[12.5px] sm:text-[13px] font-bold text-ink">Cash on Delivery</span><span class="block font-mono text-[9.5px] sm:text-[10px] uppercase tracking-wider text-mute">Pay at your doorstep</span></span>
         </div>
         <div class="flex items-center gap-3.5 p-4.5 text-left">
-          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="banknote" class="h-5 w-5"></i></span>
-          <span><span class="block text-[13px] font-bold text-ink">Cash on Delivery</span><span class="block font-mono text-[10px] uppercase tracking-wider text-mute">Pay at your doorstep</span></span>
-        </div>
-        <div class="flex items-center gap-3.5 p-4.5 text-left">
-          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="shield-check" class="h-5 w-5"></i></span>
-          <span><span class="block text-[13px] font-bold text-ink">100% Original Batch</span><span class="block font-mono text-[10px] uppercase tracking-wider text-mute">Scratch-code verified</span></span>
+          <span class="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-orange-100 text-ember"><i data-lucide="shield-check" class="h-4.5 w-4.5 sm:h-5 sm:w-5"></i></span>
+          <span><span class="block text-[12.5px] sm:text-[13px] font-bold text-ink">100% Original Batch</span><span class="block font-mono text-[9.5px] sm:text-[10px] uppercase tracking-wider text-mute">Scratch-code verified</span></span>
         </div>
       </div>
     </div>
@@ -327,19 +327,25 @@
   <div class="wrap">
 
     <!-- ===== QUICK VAPE & E-LIQUID FINDER ===== -->
-    <div class="rv relative z-20 -mt-20 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_25px_60px_-20px_rgba(0,0,0,.09)] md:-mt-24 md:p-8">
-      <div class="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-center">
-        <div class="flex items-center gap-3.5">
-          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-ember to-rust text-white shadow-md"><i data-lucide="sliders-horizontal" class="h-6 w-6"></i></span>
+    <div class="rv relative z-20 -mt-16 sm:-mt-20 rounded-3xl border border-slate-200 bg-white p-4 sm:p-6 md:-mt-24 md:p-8 shadow-[0_25px_60px_-20px_rgba(0,0,0,.09)]">
+      <div class="mb-5 sm:mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+        <div class="flex items-center gap-3">
+          <span class="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-ember to-rust text-white shadow-md"><i data-lucide="sliders-horizontal" class="h-5 w-5 sm:h-6 sm:w-6"></i></span>
           <div>
-            <h2 class="font-display text-xl font-bold tracking-tight text-ink md:text-2xl">Quick Vape &amp; E-Liquid Finder</h2>
-            <p class="font-mono text-[10.5px] uppercase tracking-[0.2em] text-mute font-semibold">Tap a filter — the grid reacts live</p>
+            <h2 class="font-display text-lg sm:text-xl font-bold tracking-tight text-ink md:text-2xl">Quick Vape &amp; E-Liquid Finder</h2>
+            <p class="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-mute font-semibold">Tap a filter — the grid reacts live</p>
           </div>
         </div>
-        <!-- Tabs -->
-        <div class="inline-flex self-start rounded-full border border-slate-200 bg-slate-100 p-1.5 md:self-auto" role="tablist" aria-label="Finder mode">
-          <button id="tabDevices" class="tabbtn active" role="tab" aria-selected="true"><i data-lucide="cpu" class="h-4 w-4"></i>Find Devices &amp; Pods</button>
-          <button id="tabLiquids" class="tabbtn" role="tab" aria-selected="false"><i data-lucide="droplets" class="h-4 w-4"></i>E-Liquid &amp; Salt Nic</button>
+        <!-- Tabs (Clean 50/50 responsive layout without breaking text) -->
+        <div class="inline-flex w-full sm:w-auto rounded-2xl sm:rounded-full border border-slate-200 bg-slate-100 p-1 sm:p-1.5" role="tablist" aria-label="Finder mode">
+          <button id="tabDevices" class="tabbtn active flex-1 sm:flex-initial justify-center text-center py-2 px-2.5 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap" role="tab" aria-selected="true">
+            <i data-lucide="cpu" class="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"></i>
+            <span>Devices &amp; Pods</span>
+          </button>
+          <button id="tabLiquids" class="tabbtn flex-1 sm:flex-initial justify-center text-center py-2 px-2.5 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap" role="tab" aria-selected="false">
+            <i data-lucide="droplets" class="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"></i>
+            <span>E-Liquid &amp; Salt Nic</span>
+          </button>
         </div>
       </div>
 
@@ -446,8 +452,8 @@
         </div>
       </div>
 
-      <!-- Grid -->
-      <div id="productGrid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+      <!-- Grid (2 columns on mobile, 3 on tablet/desktop, 4 on xl) -->
+      <div id="productGrid" class="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4"></div>
 
       <!-- Empty state -->
       <div id="emptyState" class="hidden flex-col items-center justify-center rounded-3xl border border-dashed border-slate-300 bg-white py-20 text-center shadow-sm">
@@ -872,32 +878,32 @@ const clearBtn = document.getElementById('clearFilters');
 function cardHTML(p, i){
   const waText = encodeURIComponent(`Hi Vape Jam! I'd like to order: ${p.brandLabel} ${p.name} (${PKR(p.price)}). Is it available for delivery?`);
   return `
-  <article class="prod group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]"
+  <article class="prod group relative flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember hover:shadow-[0_22px_45px_-12px_rgba(245,130,32,.22)]"
     style="animation-delay:${i*45}ms"
     data-kind="${p.kind}" data-brand="${p.brand}" ${p.type?`data-type="${p.type}"`:''} ${p.size?`data-size="${p.size}"`:''} ${p.nicKey?`data-nic="${p.nicKey}"`:''} ${p.flavor?`data-flavor="${p.flavor}"`:''} data-name="${(p.brandLabel+' '+p.name).toLowerCase()}">
     
     <!-- White Background Product Visual Container -->
-    <div class="relative aspect-[4/5] overflow-hidden bg-white p-6 border-b border-slate-100 flex items-center justify-center">
+    <div class="relative aspect-[4/5] overflow-hidden bg-white p-3 sm:p-6 border-b border-slate-100 flex items-center justify-center">
       <div class="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.06] group-hover:-rotate-1">${art(p)}</div>
-      <span class="absolute left-3.5 top-3.5 rounded-full px-3 py-1 font-mono text-[9px] font-bold uppercase tracking-widest ${BADGES[p.badge]||''}">${p.badge}</span>
-      <button data-wish="${p.id}" class="absolute right-3.5 top-3.5 grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/90 text-slate-500 shadow-sm backdrop-blur transition-all hover:border-ember hover:text-ember" aria-label="Add to wishlist">
-        <i data-lucide="heart" class="h-4 w-4"></i>
+      <span class="absolute left-2 top-2 sm:left-3.5 sm:top-3.5 rounded-full px-2 py-0.5 sm:px-3 sm:py-1 font-mono text-[8px] sm:text-[9px] font-bold uppercase tracking-wider sm:tracking-widest ${BADGES[p.badge]||''}">${p.badge}</span>
+      <button data-wish="${p.id}" class="absolute right-2 top-2 sm:right-3.5 sm:top-3.5 grid h-7 w-7 sm:h-9 sm:w-9 place-items-center rounded-full border border-slate-200 bg-white/90 text-slate-500 shadow-sm backdrop-blur transition-all hover:border-ember hover:text-ember" aria-label="Add to wishlist">
+        <i data-lucide="heart" class="h-3.5 w-3.5 sm:h-4 sm:w-4"></i>
       </button>
     </div>
     
     <!-- Product Info -->
-    <div class="flex flex-1 flex-col p-5 bg-white">
-      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-mute">${p.brandLabel}</p>
-      <h3 class="mt-1 font-display text-[16px] font-bold leading-snug tracking-tight text-ink">${p.name}</h3>
-      <span class="mt-2 inline-flex w-fit items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[9.5px] font-medium uppercase tracking-wider text-slate-600">${p.spec}</span>
-      <div class="mt-auto pt-4">
-        <p class="font-display text-xl font-bold text-ink">${PKR(p.price)}</p>
-        <div class="mt-3 flex gap-2">
-          <button data-add="${p.id}" class="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-ember to-rust py-2.5 font-display text-[13px] font-bold text-white shadow-sm transition-all hover:brightness-105 hover:shadow-[0_6px_20px_-4px_rgba(245,130,32,.5)] active:scale-95">
-            <i data-lucide="shopping-bag" class="h-4 w-4"></i>Add to Cart
+    <div class="flex flex-1 flex-col p-3 sm:p-5 bg-white">
+      <p class="font-mono text-[8.5px] sm:text-[10px] font-bold uppercase tracking-[0.16em] sm:tracking-[0.24em] text-mute">${p.brandLabel}</p>
+      <h3 class="mt-0.5 sm:mt-1 font-display text-[13px] sm:text-[16px] font-bold leading-snug tracking-tight text-ink line-clamp-1">${p.name}</h3>
+      <span class="mt-1 sm:mt-2 inline-flex w-fit max-w-full items-center truncate rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 sm:px-2.5 sm:py-1 font-mono text-[8px] sm:text-[9.5px] font-medium uppercase tracking-wider text-slate-600">${p.spec}</span>
+      <div class="mt-auto pt-3 sm:pt-4">
+        <p class="font-display text-[15px] sm:text-xl font-bold text-ink">${PKR(p.price)}</p>
+        <div class="mt-2 sm:mt-3 flex gap-1.5 sm:gap-2">
+          <button data-add="${p.id}" class="flex flex-1 items-center justify-center gap-1 sm:gap-2 rounded-lg sm:rounded-xl bg-gradient-to-r from-ember to-rust py-2 sm:py-2.5 px-1 sm:px-2 font-display text-[11px] sm:text-[13px] font-bold text-white shadow-sm transition-all hover:brightness-105 hover:shadow-[0_6px_20px_-4px_rgba(245,130,32,.5)] active:scale-95">
+            <i data-lucide="shopping-bag" class="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"></i><span class="truncate">Add to Cart</span>
           </button>
-          <a href="https://wa.me/${WA}?text=${waText}" target="_blank" rel="noopener" class="grid w-11 place-items-center rounded-xl border border-slate-200 bg-white text-[#25D366] transition-all hover:border-[#25D366] hover:bg-emerald-50 active:scale-95 shadow-sm" aria-label="Order ${p.name} via WhatsApp">
-            <i data-lucide="message-circle" class="h-4.5 w-4.5"></i>
+          <a href="https://wa.me/${WA}?text=${waText}" target="_blank" rel="noopener" class="grid w-8 sm:w-11 min-w-[32px] sm:min-w-[44px] place-items-center rounded-lg sm:rounded-xl border border-slate-200 bg-white text-[#25D366] transition-all hover:border-[#25D366] hover:bg-emerald-50 active:scale-95 shadow-sm" aria-label="Order ${p.name} via WhatsApp">
+            <i data-lucide="message-circle" class="h-4 w-4 sm:h-4.5 sm:w-4.5"></i>
           </a>
         </div>
       </div>
