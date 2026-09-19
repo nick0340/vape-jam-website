@@ -336,13 +336,13 @@
             <p class="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-mute font-semibold">Tap a filter — the grid reacts live</p>
           </div>
         </div>
-        <!-- Tabs (Clean 50/50 responsive layout without breaking text) -->
-        <div class="inline-flex w-full sm:w-auto rounded-2xl sm:rounded-full border border-slate-200 bg-slate-100 p-1 sm:p-1.5" role="tablist" aria-label="Finder mode">
-          <button id="tabDevices" class="tabbtn active flex-1 sm:flex-initial justify-center text-center py-2 px-2.5 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap" role="tab" aria-selected="true">
+        <!-- Tabs (Perfect matching round-full capsule on both outer container and inner tabs) -->
+        <div class="inline-flex w-full sm:w-auto rounded-full border border-slate-200/90 bg-slate-100 p-1 sm:p-1.5 shadow-inner" role="tablist" aria-label="Finder mode">
+          <button id="tabDevices" class="tabbtn active flex-1 sm:flex-initial justify-center text-center py-2 px-3 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap rounded-full" role="tab" aria-selected="true">
             <i data-lucide="cpu" class="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"></i>
             <span>Devices &amp; Pods</span>
           </button>
-          <button id="tabLiquids" class="tabbtn flex-1 sm:flex-initial justify-center text-center py-2 px-2.5 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap" role="tab" aria-selected="false">
+          <button id="tabLiquids" class="tabbtn flex-1 sm:flex-initial justify-center text-center py-2 px-3 sm:py-2.5 sm:px-5 text-xs sm:text-sm whitespace-nowrap rounded-full" role="tab" aria-selected="false">
             <i data-lucide="droplets" class="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"></i>
             <span>E-Liquids</span>
           </button>
@@ -619,12 +619,28 @@
           </div>
         </div>
 
-        <!-- Stat chips (2 per row on mobile) -->
-        <div class="grid grid-cols-2 content-center gap-2.5 sm:gap-4">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-3.5 sm:p-5 backdrop-blur"><i data-lucide="store" class="h-4.5 w-4.5 sm:h-5 sm:w-5 text-ember"></i><p class="mt-2 sm:mt-3 font-display text-lg sm:text-2xl font-bold">3 Outlets</p><p class="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-slate-400">Bahadurabad · DHA · Gulshan — one city, fully covered.</p></div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-3.5 sm:p-5 backdrop-blur"><i data-lucide="timer" class="h-4.5 w-4.5 sm:h-5 sm:w-5 text-ember"></i><p class="mt-2 sm:mt-3 font-display text-lg sm:text-2xl font-bold">Same-Day</p><p class="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-slate-400">Riders dispatched across Karachi before 8 PM daily.</p></div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-3.5 sm:p-5 backdrop-blur"><i data-lucide="shield-check" class="h-4.5 w-4.5 sm:h-5 sm:w-5 text-ember"></i><p class="mt-2 sm:mt-3 font-display text-lg sm:text-2xl font-bold">100% Original</p><p class="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-slate-400">Every batch verified against official manufacturer codes.</p></div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-3.5 sm:p-5 backdrop-blur"><i data-lucide="award" class="h-4.5 w-4.5 sm:h-5 sm:w-5 text-ember"></i><p class="mt-2 sm:mt-3 font-display text-lg sm:text-2xl font-bold">Expert Crew</p><p class="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-slate-400">Real vapers on shift — device matching done right.</p></div>
+        <!-- Stat chips (2 per row on mobile, equal height, single line titles) -->
+        <div class="grid grid-cols-2 content-center gap-2.5 sm:gap-4 items-stretch">
+          <div class="flex flex-col h-full rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-5 backdrop-blur">
+            <i data-lucide="store" class="h-4 w-4 sm:h-5 sm:w-5 text-ember shrink-0"></i>
+            <p class="mt-2 sm:mt-3 font-display text-[13.5px] xs:text-[15px] sm:text-2xl font-bold whitespace-nowrap tracking-tight text-white">3 Outlets</p>
+            <p class="mt-1 text-[10.5px] sm:text-xs leading-relaxed text-slate-400">Bahadurabad · DHA · Gulshan</p>
+          </div>
+          <div class="flex flex-col h-full rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-5 backdrop-blur">
+            <i data-lucide="timer" class="h-4 w-4 sm:h-5 sm:w-5 text-ember shrink-0"></i>
+            <p class="mt-2 sm:mt-3 font-display text-[13.5px] xs:text-[15px] sm:text-2xl font-bold whitespace-nowrap tracking-tight text-white">Same-Day</p>
+            <p class="mt-1 text-[10.5px] sm:text-xs leading-relaxed text-slate-400">Riders across Karachi daily</p>
+          </div>
+          <div class="flex flex-col h-full rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-5 backdrop-blur">
+            <i data-lucide="shield-check" class="h-4 w-4 sm:h-5 sm:w-5 text-ember shrink-0"></i>
+            <p class="mt-2 sm:mt-3 font-display text-[13.5px] xs:text-[15px] sm:text-2xl font-bold whitespace-nowrap tracking-tight text-white">100% Original</p>
+            <p class="mt-1 text-[10.5px] sm:text-xs leading-relaxed text-slate-400">Scratch-code verified stock</p>
+          </div>
+          <div class="flex flex-col h-full rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-5 backdrop-blur">
+            <i data-lucide="award" class="h-4 w-4 sm:h-5 sm:w-5 text-ember shrink-0"></i>
+            <p class="mt-2 sm:mt-3 font-display text-[13.5px] xs:text-[15px] sm:text-2xl font-bold whitespace-nowrap tracking-tight text-white">Expert Crew</p>
+            <p class="mt-1 text-[10.5px] sm:text-xs leading-relaxed text-slate-400">Real vapers helping you switch</p>
+          </div>
         </div>
       </div>
     </div>
