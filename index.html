@@ -785,20 +785,21 @@ const WA  = '923362396603';
 ------------------------------------------------------------------ */
 const PRODUCTS = [
   /* — Devices — */
-  { id:'d1', kind:'device', brand:'vaporesso', brandLabel:'Vaporesso', type:'pod',        name:'XROS 4 Pod Kit',            badge:'Best Seller',   price:7499,  spec:'Pod System · 1000mAh',      accent:'#F58220', viz:'pod',  vtext:'XROS' },
-  { id:'d2', kind:'device', brand:'uwell',     brandLabel:'Uwell',     type:'pod',        name:'Caliburn GK3',              badge:'New',           price:6999,  spec:'Pod System · 900mAh',       accent:'#D9531E', viz:'pod',  vtext:'GK3' },
-  { id:'d3', kind:'device', brand:'voopoo',    brandLabel:'Voopoo',    type:'boxmod',     name:'Drag S2 Pod Mod Kit',       badge:'100% Original', price:12999, spec:'Pod Mod · 2500mAh · 60W',   accent:'#DE4A26', viz:'mod',  vtext:'60W' },
-  { id:'d4', kind:'device', brand:'geekvape',  brandLabel:'Geekvape',  type:'boxmod',     name:'Aegis Legend 3 Mod',        badge:'100% Original', price:16499, spec:'Box Mod · 2×18650 · 200W',  accent:'#F58220', viz:'mod',  vtext:'200W' },
-  { id:'d5', kind:'device', brand:'oxva',      brandLabel:'OXVA',      type:'pod',        name:'XLIM Pro 2',                badge:'Best Seller',   price:6499,  spec:'Pod System · 1300mAh',      accent:'#F58220', viz:'pod',  vtext:'XLIM' },
-  { id:'d6', kind:'device', brand:'uwell',     brandLabel:'Uwell',     type:'cart',       name:'Caliburn G3 Pods (4-Pack)', badge:'100% Original', price:2299,  spec:'Replacement Pod · 0.6Ω',    accent:'#D9531E', viz:'cart', vtext:'0.6Ω' },
-  { id:'d7', kind:'device', brand:'elfbar',    brandLabel:'Elf Bar',   type:'disposable', name:'TE6000 Disposable',         badge:'New',           price:3200,  spec:'Disposable · 6000 Puffs',   accent:'#F58220', viz:'disp', vtext:'6K' },
+  { id:'d1', kind:'device', brand:'vaporesso', brandLabel:'Vaporesso', type:'pod',        name:'XROS 4 Pod Kit',            badge:'Best Seller',   price:7499,  spec:'Pod System · 1000mAh',      accent:'#F58220', viz:'pod',  vtext:'XROS', image:'images/products/d1.png' },
+  { id:'d2', kind:'device', brand:'uwell',     brandLabel:'Uwell',     type:'pod',        name:'Caliburn GK3',              badge:'New',           price:6999,  spec:'Pod System · 900mAh',       accent:'#D9531E', viz:'pod',  vtext:'GK3',  image:'images/products/d2.png' },
+  { id:'d3', kind:'device', brand:'voopoo',    brandLabel:'Voopoo',    type:'boxmod',     name:'Drag S2 Pod Mod Kit',       badge:'100% Original', price:12999, spec:'Pod Mod · 2500mAh · 60W',   accent:'#DE4A26', viz:'mod',  vtext:'60W',  image:'images/products/d3.png' },
+  { id:'d4', kind:'device', brand:'geekvape',  brandLabel:'Geekvape',  type:'boxmod',     name:'Aegis Legend 3 Mod',        badge:'100% Original', price:16499, spec:'Box Mod · 2×18650 · 200W',  accent:'#F58220', viz:'mod',  vtext:'200W', image:'images/products/d4.png' },
+  { id:'d5', kind:'device', brand:'oxva',      brandLabel:'OXVA',      type:'pod',        name:'XLIM Pro 2',                badge:'Best Seller',   price:6499,  spec:'Pod System · 1300mAh',      accent:'#F58220', viz:'pod',  vtext:'XLIM', image:'images/products/d5.png' },
+  { id:'d6', kind:'device', brand:'uwell',     brandLabel:'Uwell',     type:'cart',       name:'Caliburn G3 Pods (4-Pack)', badge:'100% Original', price:2299,  spec:'Replacement Pod · 0.6Ω',    accent:'#D9531E', viz:'cart', vtext:'0.6Ω', image:'images/products/d6.png' },
+  { id:'d7', kind:'device', brand:'geekvape',  brandLabel:'Geek Bar',  type:'disposable', name:'Pulse 15000 Disposable',    badge:'Best Seller',   price:3800,  spec:'Disposable · 15000 Puffs',  accent:'#F58220', viz:'disp', vtext:'15K',  image:'images/products/d7.png' },
+  { id:'d8', kind:'device', brand:'elfbar',    brandLabel:'Elf Bar',   type:'disposable', name:'TE6000 Disposable',         badge:'New',           price:3200,  spec:'Disposable · 6000 Puffs',   accent:'#F58220', viz:'disp', vtext:'6K',   image:'images/products/d8.png' },
   /* — E-Liquids — */
-  { id:'l1', kind:'liquid', brand:'vgod',     brandLabel:'VGOD',            size:'30ml',  nicKey:'salt:50', flavor:'tobacco', name:'Cubano Salt Nic',        badge:'Salt Nic',      price:3800, spec:'30ml · Salt 50mg',  accent:'#A9764F', viz:'bottle', vtext:'VGOD',  vsub:'CUBANO',        vspec:'50MG · 30ML' },
-  { id:'l2', kind:'liquid', brand:'skwezed',  brandLabel:'Skwezed',         size:'30ml',  nicKey:'salt:25', flavor:'fruity',  name:'Green Apple Ice Salt',   badge:'Best Seller',   price:3500, spec:'30ml · Salt 25mg',  accent:'#F58220', viz:'bottle', vtext:'SKWZ',  vsub:'GREEN APPLE ICE',vspec:'25MG · 30ML' },
-  { id:'l3', kind:'liquid', brand:'ruthless', brandLabel:'Ruthless',        size:'100ml', nicKey:'fb:3',    flavor:'fruity',  name:'Grape Drank Freebase',   badge:'100% Original', price:4200, spec:'100ml · Freebase 3mg', accent:'#8B5CF6', viz:'bottle', vtext:'RTHLS', vsub:'GRAPE DRANK',   vspec:'3MG · 100ML' },
-  { id:'l4', kind:'liquid', brand:'nasty',    brandLabel:'Nasty Juice',     size:'60ml',  nicKey:'fb:3',    flavor:'fruity',  name:'Cush Man Mango Freebase',badge:'100% Original', price:4000, spec:'60ml · Freebase 3mg',  accent:'#D9531E', viz:'bottle', vtext:'NASTY', vsub:'CUSH MAN',      vspec:'3MG · 60ML' },
-  { id:'l5', kind:'liquid', brand:'blvk',     brandLabel:'BLVK',            size:'30ml',  nicKey:'salt:35', flavor:'menthol', name:'Mint Ice Salt Nic',      badge:'New',           price:3600, spec:'30ml · Salt 35mg',  accent:'#0D9488', viz:'bottle', vtext:'BLVK',  vsub:'MINT ICE',      vspec:'35MG · 30ML' },
-  { id:'l6', kind:'liquid', brand:'grand',    brandLabel:'Grand E-Liquids', size:'60ml',  nicKey:'fb:6',    flavor:'dessert', name:'Vanilla Custard Freebase',badge:'100% Original', price:4000, spec:'60ml · Freebase 6mg',  accent:'#D97706', viz:'bottle', vtext:'GRAND', vsub:'VANILLA CUSTARD',vspec:'6MG · 60ML' },
+  { id:'l1', kind:'liquid', brand:'vgod',     brandLabel:'VGOD',            size:'30ml',  nicKey:'salt:50', flavor:'tobacco', name:'Cubano Salt Nic',        badge:'Salt Nic',      price:3800, spec:'30ml · Salt 50mg',  accent:'#A9764F', viz:'bottle', vtext:'VGOD',  vsub:'CUBANO',        vspec:'50MG · 30ML', image:'images/products/l1.png' },
+  { id:'l2', kind:'liquid', brand:'skwezed',  brandLabel:'Skwezed',         size:'30ml',  nicKey:'salt:25', flavor:'fruity',  name:'Green Apple Ice Salt',   badge:'Best Seller',   price:3500, spec:'30ml · Salt 25mg',  accent:'#F58220', viz:'bottle', vtext:'SKWZ',  vsub:'GREEN APPLE ICE',vspec:'25MG · 30ML', image:'images/products/l2.png' },
+  { id:'l3', brand:'vgod',     kind:'liquid', brandLabel:'VGOD',            size:'30ml',  nicKey:'salt:50', flavor:'fruity',  name:'Iced Berry Bomb Salt',   badge:'100% Original', price:3800, spec:'30ml · Salt 50mg',  accent:'#8B5CF6', viz:'bottle', vtext:'VGOD',  vsub:'BERRY BOMB',    vspec:'50MG · 30ML', image:'images/products/l3.png' },
+  { id:'l4', brand:'vgod',     kind:'liquid', brandLabel:'VGOD',            size:'30ml',  nicKey:'salt:25', flavor:'fruity',  name:'Iced Mango Bomb Salt',   badge:'100% Original', price:3800, spec:'30ml · Salt 25mg',  accent:'#D9531E', viz:'bottle', vtext:'VGOD',  vsub:'MANGO BOMB',    vspec:'25MG · 30ML', image:'images/products/l4.png' },
+  { id:'l5', kind:'liquid', brand:'blvk',     brandLabel:'BLVK',            size:'30ml',  nicKey:'salt:35', flavor:'fruity',  name:'Mango Banana Ice Salt',  badge:'New',           price:3600, spec:'30ml · Salt 35mg',  accent:'#0D9488', viz:'bottle', vtext:'BLVK',  vsub:'MANGO BANANA',  vspec:'35MG · 30ML', image:'images/products/l5.png' },
+  { id:'l6', kind:'liquid', brand:'grand',    brandLabel:'Grand E-Liquids', size:'60ml',  nicKey:'fb:6',    flavor:'dessert', name:'Vanilla Custard Freebase',badge:'100% Original', price:4000, spec:'60ml · Freebase 6mg',  accent:'#D97706', viz:'bottle', vtext:'GRAND', vsub:'VANILLA CUSTARD',vspec:'6MG · 60ML', image:'images/products/l6.png' },
 ];
 
 /* ------------------------------------------------------------------
@@ -898,8 +899,13 @@ function cardHTML(p, i){
     data-kind="${p.kind}" data-brand="${p.brand}" ${p.type?`data-type="${p.type}"`:''} ${p.size?`data-size="${p.size}"`:''} ${p.nicKey?`data-nic="${p.nicKey}"`:''} ${p.flavor?`data-flavor="${p.flavor}"`:''} data-name="${(p.brandLabel+' '+p.name).toLowerCase()}">
     
     <!-- White Background Product Visual Container -->
-    <div class="relative aspect-[4/5] overflow-hidden bg-white p-3 sm:p-6 border-b border-slate-100 flex items-center justify-center">
-      <div class="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.06] group-hover:-rotate-1">${art(p)}</div>
+    <div class="relative aspect-[4/5] overflow-hidden bg-white p-3 sm:p-5 border-b border-slate-100 flex items-center justify-center">
+      <div class="h-full w-full flex items-center justify-center">
+        ${p.image
+          ? `<img src="${p.image}" alt="${p.brandLabel} ${p.name}" class="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.08] drop-shadow-sm" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML=\`${art(p)}\`;" />`
+          : `<div class="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.06] group-hover:-rotate-1">${art(p)}</div>`
+        }
+      </div>
       <span class="absolute left-2 top-2 sm:left-3.5 sm:top-3.5 rounded-full px-2 py-0.5 sm:px-3 sm:py-1 font-mono text-[8px] sm:text-[9px] font-bold uppercase tracking-wider sm:tracking-widest ${BADGES[p.badge]||''}">${p.badge}</span>
       <button data-wish="${p.id}" class="absolute right-2 top-2 sm:right-3.5 sm:top-3.5 grid h-7 w-7 sm:h-9 sm:w-9 place-items-center rounded-full border border-slate-200 bg-white/90 text-slate-500 shadow-sm backdrop-blur transition-all hover:border-ember hover:text-ember" aria-label="Add to wishlist">
         <i data-lucide="heart" class="h-3.5 w-3.5 sm:h-4 sm:w-4"></i>
@@ -1058,7 +1064,9 @@ function renderCart(){
     itemsEl.innerHTML = [...cart.entries()].map(([id,q])=>{
       const p = PRODUCTS.find(x=>x.id===id);
       return `<div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm">
-        <div class="h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-white border border-slate-100 p-1 flex items-center justify-center">${art(p,'c')}</div>
+        <div class="h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-white border border-slate-100 p-1 flex items-center justify-center">
+          ${p.image ? `<img src="${p.image}" alt="${p.name}" class="h-full w-full object-contain" />` : art(p,'c')}
+        </div>
         <div class="min-w-0 flex-1">
           <p class="truncate font-display text-sm font-bold text-ink">${p.name}</p>
           <p class="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-mute">${p.spec}</p>
